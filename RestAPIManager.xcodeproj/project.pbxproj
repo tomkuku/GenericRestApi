@@ -37,6 +37,7 @@
 		7201858427906F140021B813 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7201858927906F140021B813 /* RestAPIManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RestAPIManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7201858D27906F140021B813 /* RestAPIManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAPIManagerTests.swift; sourceTree = "<group>"; };
+		72BDB33B27909E2000F68B4C /* build_config.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build_config.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +61,7 @@
 		7201856A27906F130021B813 = {
 			isa = PBXGroup;
 			children = (
+				72BDB33B27909E2000F68B4C /* build_config.sh */,
 				7201857527906F130021B813 /* RestAPIManager */,
 				7201858C27906F140021B813 /* RestAPIManagerTests */,
 				7201857427906F130021B813 /* Products */,
@@ -107,6 +109,7 @@
 				7201856F27906F130021B813 /* Sources */,
 				7201857027906F130021B813 /* Frameworks */,
 				7201857127906F130021B813 /* Resources */,
+				72BDB33C27909E5C00F68B4C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -192,6 +195,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		72BDB33C27909E5C00F68B4C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "source build_config.sh\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7201856F27906F130021B813 /* Sources */ = {
