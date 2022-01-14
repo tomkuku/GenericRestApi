@@ -14,6 +14,9 @@
 		7201858027906F140021B813 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7201857F27906F140021B813 /* Assets.xcassets */; };
 		7201858327906F140021B813 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7201858127906F140021B813 /* LaunchScreen.storyboard */; };
 		7201858E27906F140021B813 /* RestAPIManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7201858D27906F140021B813 /* RestAPIManagerTests.swift */; };
+		72BDB3472790A9F300F68B4C /* Config-Debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72BDB3462790A9F300F68B4C /* Config-Debug.plist */; };
+		72BDB34C2790AA1700F68B4C /* Config-Release.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72BDB34B2790AA1700F68B4C /* Config-Release.plist */; };
+		72BDB3522790ABA200F68B4C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BDB3512790ABA200F68B4C /* Config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,9 @@
 		7201858927906F140021B813 /* RestAPIManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RestAPIManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7201858D27906F140021B813 /* RestAPIManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAPIManagerTests.swift; sourceTree = "<group>"; };
 		72BDB33B27909E2000F68B4C /* build_config.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build_config.sh; sourceTree = "<group>"; };
+		72BDB3462790A9F300F68B4C /* Config-Debug.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Config-Debug.plist"; sourceTree = "<group>"; };
+		72BDB34B2790AA1700F68B4C /* Config-Release.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Config-Release.plist"; sourceTree = "<group>"; };
+		72BDB3512790ABA200F68B4C /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				72BDB33B27909E2000F68B4C /* build_config.sh */,
+				72BDB3402790A4D700F68B4C /* Configurations */,
 				7201857527906F130021B813 /* RestAPIManager */,
 				7201858C27906F140021B813 /* RestAPIManagerTests */,
 				7201857427906F130021B813 /* Products */,
@@ -97,6 +104,16 @@
 				7201858D27906F140021B813 /* RestAPIManagerTests.swift */,
 			);
 			path = RestAPIManagerTests;
+			sourceTree = "<group>";
+		};
+		72BDB3402790A4D700F68B4C /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				72BDB3462790A9F300F68B4C /* Config-Debug.plist */,
+				72BDB34B2790AA1700F68B4C /* Config-Release.plist */,
+				72BDB3512790ABA200F68B4C /* Config.swift */,
+			);
+			path = Configurations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +200,8 @@
 			files = (
 				7201858327906F140021B813 /* LaunchScreen.storyboard in Resources */,
 				7201858027906F140021B813 /* Assets.xcassets in Resources */,
+				72BDB34C2790AA1700F68B4C /* Config-Release.plist in Resources */,
+				72BDB3472790A9F300F68B4C /* Config-Debug.plist in Resources */,
 				7201857E27906F130021B813 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7201857B27906F130021B813 /* ViewController.swift in Sources */,
+				72BDB3522790ABA200F68B4C /* Config.swift in Sources */,
 				7201857727906F130021B813 /* AppDelegate.swift in Sources */,
 				7201857927906F130021B813 /* SceneDelegate.swift in Sources */,
 			);
