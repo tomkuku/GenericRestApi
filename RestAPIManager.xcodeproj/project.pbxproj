@@ -13,7 +13,7 @@
 		7201857E27906F130021B813 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7201857C27906F130021B813 /* Main.storyboard */; };
 		7201858027906F140021B813 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7201857F27906F140021B813 /* Assets.xcassets */; };
 		7201858327906F140021B813 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7201858127906F140021B813 /* LaunchScreen.storyboard */; };
-		7201858E27906F140021B813 /* RestAPIManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7201858D27906F140021B813 /* RestAPIManagerTests.swift */; };
+		7201858E27906F140021B813 /* RestApiManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7201858D27906F140021B813 /* RestApiManagerTests.swift */; };
 		72B4CF01279768C7007AB50B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4CF00279768C7007AB50B /* User.swift */; };
 		72B4CF0327976EF2007AB50B /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4CF0227976EF2007AB50B /* HTTPClient.swift */; };
 		72B4CF0527980EC1007AB50B /* JSONCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4CF0427980EC1007AB50B /* JSONCoder.swift */; };
@@ -22,6 +22,8 @@
 		72BDB3472790A9F300F68B4C /* Config-Debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72BDB3462790A9F300F68B4C /* Config-Debug.plist */; };
 		72BDB34C2790AA1700F68B4C /* Config-Release.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72BDB34B2790AA1700F68B4C /* Config-Release.plist */; };
 		72BDB3522790ABA200F68B4C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BDB3512790ABA200F68B4C /* Config.swift */; };
+		72D5FC972798279600328CF9 /* GoRestApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D5FC962798279600328CF9 /* GoRestApiClientTests.swift */; };
+		72D5FC992798291B00328CF9 /* HTTPClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D5FC982798291B00328CF9 /* HTTPClientMock.swift */; };
 		72F60D152797472500952737 /* GoRestApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F60D142797472500952737 /* GoRestApiClient.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +47,7 @@
 		7201858227906F140021B813 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7201858427906F140021B813 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7201858927906F140021B813 /* RestAPIManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RestAPIManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7201858D27906F140021B813 /* RestAPIManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAPIManagerTests.swift; sourceTree = "<group>"; };
+		7201858D27906F140021B813 /* RestApiManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestApiManagerTests.swift; sourceTree = "<group>"; };
 		72B4CF00279768C7007AB50B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		72B4CF0227976EF2007AB50B /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		72B4CF0427980EC1007AB50B /* JSONCoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONCoder.swift; sourceTree = "<group>"; };
@@ -54,6 +56,8 @@
 		72BDB3462790A9F300F68B4C /* Config-Debug.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Config-Debug.plist"; sourceTree = "<group>"; };
 		72BDB34B2790AA1700F68B4C /* Config-Release.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Config-Release.plist"; sourceTree = "<group>"; };
 		72BDB3512790ABA200F68B4C /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		72D5FC962798279600328CF9 /* GoRestApiClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoRestApiClientTests.swift; sourceTree = "<group>"; };
+		72D5FC982798291B00328CF9 /* HTTPClientMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientMock.swift; sourceTree = "<group>"; };
 		72F60D142797472500952737 /* GoRestApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoRestApiClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,7 +120,9 @@
 		7201858C27906F140021B813 /* RestAPIManagerTests */ = {
 			isa = PBXGroup;
 			children = (
-				7201858D27906F140021B813 /* RestAPIManagerTests.swift */,
+				7201858D27906F140021B813 /* RestApiManagerTests.swift */,
+				72D5FC962798279600328CF9 /* GoRestApiClientTests.swift */,
+				72D5FC982798291B00328CF9 /* HTTPClientMock.swift */,
 				72B9E2C12798369900B703B7 /* UsersTestFile.json */,
 			);
 			path = RestAPIManagerTests;
@@ -216,6 +222,7 @@
 			files = (
 				7201858327906F140021B813 /* LaunchScreen.storyboard in Resources */,
 				7201858027906F140021B813 /* Assets.xcassets in Resources */,
+				72B9E2C327983DFA00B703B7 /* UsersTestFile.json in Resources */,
 				72BDB34C2790AA1700F68B4C /* Config-Release.plist in Resources */,
 				72BDB3472790A9F300F68B4C /* Config-Debug.plist in Resources */,
 				7201857E27906F130021B813 /* Main.storyboard in Resources */,
@@ -271,8 +278,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7201858E27906F140021B813 /* RestAPIManagerTests.swift in Sources */,
+				7201858E27906F140021B813 /* RestApiManagerTests.swift in Sources */,
 				72B9E2C42798489200B703B7 /* Config.swift in Sources */,
+				72D5FC972798279600328CF9 /* GoRestApiClientTests.swift in Sources */,
+				72D5FC992798291B00328CF9 /* HTTPClientMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
