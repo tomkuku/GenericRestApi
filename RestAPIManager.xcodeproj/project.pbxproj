@@ -16,9 +16,13 @@
 		7201858E27906F140021B813 /* RestAPIManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7201858D27906F140021B813 /* RestAPIManagerTests.swift */; };
 		72B4CF01279768C7007AB50B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4CF00279768C7007AB50B /* User.swift */; };
 		72B4CF0327976EF2007AB50B /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4CF0227976EF2007AB50B /* HTTPClient.swift */; };
+		72B4CF0527980EC1007AB50B /* JSONCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4CF0427980EC1007AB50B /* JSONCoder.swift */; };
+		72B9E2C327983DFA00B703B7 /* UsersTestFile.json in Resources */ = {isa = PBXBuildFile; fileRef = 72B9E2C12798369900B703B7 /* UsersTestFile.json */; };
+		72B9E2C42798489200B703B7 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BDB3512790ABA200F68B4C /* Config.swift */; };
 		72BDB3472790A9F300F68B4C /* Config-Debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72BDB3462790A9F300F68B4C /* Config-Debug.plist */; };
 		72BDB34C2790AA1700F68B4C /* Config-Release.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72BDB34B2790AA1700F68B4C /* Config-Release.plist */; };
 		72BDB3522790ABA200F68B4C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BDB3512790ABA200F68B4C /* Config.swift */; };
+		72F60D152797472500952737 /* GoRestApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F60D142797472500952737 /* GoRestApiClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,10 +48,13 @@
 		7201858D27906F140021B813 /* RestAPIManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAPIManagerTests.swift; sourceTree = "<group>"; };
 		72B4CF00279768C7007AB50B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		72B4CF0227976EF2007AB50B /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		72B4CF0427980EC1007AB50B /* JSONCoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONCoder.swift; sourceTree = "<group>"; };
+		72B9E2C12798369900B703B7 /* UsersTestFile.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = UsersTestFile.json; sourceTree = "<group>"; };
 		72BDB33B27909E2000F68B4C /* build_config.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build_config.sh; sourceTree = "<group>"; };
 		72BDB3462790A9F300F68B4C /* Config-Debug.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Config-Debug.plist"; sourceTree = "<group>"; };
 		72BDB34B2790AA1700F68B4C /* Config-Release.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Config-Release.plist"; sourceTree = "<group>"; };
 		72BDB3512790ABA200F68B4C /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		72F60D142797472500952737 /* GoRestApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoRestApiClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +101,8 @@
 				7201857627906F130021B813 /* AppDelegate.swift */,
 				7201857827906F130021B813 /* SceneDelegate.swift */,
 				7201857A27906F130021B813 /* ViewController.swift */,
+				72F60D142797472500952737 /* GoRestApiClient.swift */,
+				72B4CF0427980EC1007AB50B /* JSONCoder.swift */,
 				72B4CF0227976EF2007AB50B /* HTTPClient.swift */,
 				72B4CF00279768C7007AB50B /* User.swift */,
 				7201857C27906F130021B813 /* Main.storyboard */,
@@ -108,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				7201858D27906F140021B813 /* RestAPIManagerTests.swift */,
+				72B9E2C12798369900B703B7 /* UsersTestFile.json */,
 			);
 			path = RestAPIManagerTests;
 			sourceTree = "<group>";
@@ -247,6 +257,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7201857B27906F130021B813 /* ViewController.swift in Sources */,
+				72B4CF0527980EC1007AB50B /* JSONCoder.swift in Sources */,
+				72F60D152797472500952737 /* GoRestApiClient.swift in Sources */,
 				72B4CF01279768C7007AB50B /* User.swift in Sources */,
 				72B4CF0327976EF2007AB50B /* HTTPClient.swift in Sources */,
 				72BDB3522790ABA200F68B4C /* Config.swift in Sources */,
@@ -260,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7201858E27906F140021B813 /* RestAPIManagerTests.swift in Sources */,
+				72B9E2C42798489200B703B7 /* Config.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
