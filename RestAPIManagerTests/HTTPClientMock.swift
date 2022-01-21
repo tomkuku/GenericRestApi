@@ -10,6 +10,32 @@ import Foundation
 @testable import RestAPIManager
 
 final class HTTPClientMock: HTTPClient {
+    func request<T: HTTPRequest>(_ request: T, completion: @escaping (Result<HTTPResponse, HTTPClientError>) -> Void) {
+        var response = HTTPResponse()
+        
+        switch (request.url!.absoluteString, request.method) {
+        case ("https://gorest.co.in/public/v1/users", .get):
+            response.body = getData(fromFile: "UsersTestFile")
+            response.statusCode = 200
+            
+        case ("https://gorest.co.in/public/v1/users", .post):
+            response.headers["Location"] = "https://gorest.co.in/public/v1/users/3656"
+            response.statusCode = 201
+            
+        case (_, .patch):
+            response.statusCode = 200
+            
+        case (_, .delete):
+            response.statusCode = 204
+        
+        default:
+            break
+        }
+        
+        completion(.success(response))
+        return
+    }
+    
     
     func request(_ request: URLRequest, completion: @escaping (Result<HTTPResponse, HTTPClientError>) -> Void) {
         var response = HTTPResponse()
