@@ -11,12 +11,23 @@ import Foundation
 
 final class HTTPClientMock: HTTPClient {
     
-    func request(_ request: URLRequest, completion: @escaping (Result<Data?, HTTPClientError>) -> Void) {
-        if request.url!.absoluteString ==  "https://gorest.co.in/public/v1/users" {
-            let data = getData(fromFile: "UsersTestFile")
-            completion(.success(data))
-            return
+    func request(_ request: URLRequest, completion: @escaping (Result<HTTPResponse, HTTPClientError>) -> Void) {
+        var response = HTTPResponse()
+        
+        switch (request.url!.absoluteString, request.httpMethod) {
+        case ("https://gorest.co.in/public/v1/users", HTTPMethod.get.rawValue):
+            response.body = getData(fromFile: "UsersTestFile")
+            response.statusCode = 200
+            
+        case ("https://gorest.co.in/public/v1/users", HTTPMethod.post.rawValue):
+            response.headers["Location"] = "https://gorest.co.in/public/v1/users/3656"
+            response.statusCode = 201
+        default:
+            break
         }
+        
+        completion(.success(response))
+        return
     }
     
     private func getData(fromFile file: String) -> Data {

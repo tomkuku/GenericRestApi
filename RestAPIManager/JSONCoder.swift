@@ -10,10 +10,11 @@ import Foundation
 final class JSONCoder {
     
     private static let decoder = JSONDecoder()
+    private static let encoder = JSONEncoder()
     
     private init () {}
     
-    static func decodeToArray<T: Decodable>(from data: Data, path: String?) -> T? {
+    static func decode<T: Decodable>(from data: Data, path: String?) -> T? {
         var result: T? = nil
         
         do {
@@ -34,5 +35,17 @@ final class JSONCoder {
         }
         
         return result
+    }
+    
+    static func encode<T: Encodable>(object: T) -> Data? {
+        var data: Data? = nil
+        
+        do {
+            data = try encoder.encode(object)
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        return data
     }
 }

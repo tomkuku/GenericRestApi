@@ -7,7 +7,18 @@
 
 import Foundation
 
-enum HTTPResponseError {
+enum GoRestGetUsersRequestError: Error {
+    case server
+    case client
+    case other
+}
+
+enum GoRestAddUserRequestError: Error {
+    case nameTaken
+    case emailTaken
+    case server
+    case client
+}
     case server
     case `internal`
     case client
@@ -15,6 +26,8 @@ enum HTTPResponseError {
 
 protocol GoRestApiClient {
     func getUsers(completion: @escaping ([User]) -> Void)
+    func getUsers(completion: @escaping (Result<[User], GoRestGetUsersRequestError>) -> Void)
+    func addUser(_ user: User, completion: @escaping (Result<String, GoRestAddUserRequestError>) -> Void)
 }
 
 final class GoRestApiClientImpl: GoRestApiClient {
@@ -25,7 +38,7 @@ final class GoRestApiClientImpl: GoRestApiClient {
         self.httpClient = httpClient
     }
     
-    func getUsers(completion: @escaping ([User]) -> Void) {
+    func getUsers(completion: @escaping (Result<[User], GoRestGetUsersRequestError>) -> Void) {
         DispatchQueue.global().async {
             let url = URL(string: "https://gorest.co.in/public/v1/users")!
             var request = URLRequest(url: url)
@@ -35,13 +48,71 @@ final class GoRestApiClientImpl: GoRestApiClient {
                 "Content-Type": "application/json"]
             
             self.httpClient.request(request) { result in
-                switch result {
-                case .success(let data):
-                    let users: [User]? = JSONCoder.decodeToArray(from: data!, path: "data")
-                    completion(users ?? [])
-                    return
-                case .failure(let error):
-                    print(error.localizedDescription)
+                if case .success(let response) = result {
+                    switch response.statusCode! {
+                    case 200:
+                        if let responseBody = response.body {
+                            let users: [User]? = JSONCoder.decode(from: responseBody, path: "data")
+                            completion(.success(users ?? []))
+                        } else {
+                            completion(.failure(.other))
+                        }
+                        
+                    case 400...499:
+                        completion(.failure(.client))
+                        
+                    case 500...599:
+                        completion(.failure(.server))
+                        
+                    default: break
+                    }
+                } else {
+                    print("Error")
+                    
+                }
+            }
+        }
+    }
+    
+    func addUser(_ user: User, completion: @escaping (Result<String, GoRestAddUserRequestError>) -> Void) {
+        DispatchQueue.global().async {
+            let userData = JSONCoder.encode(object: user)
+            
+            print(String(data: userData!, encoding: .utf8) ?? "No User")
+            
+            let url = URL(string: "https://gorest.co.in/public/v1/users")!
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.httpBody = userData
+            request.allHTTPHeaderFields = [
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "Authorization": "Bearer \(Config.apiKey)"
+            ]
+                
+            self.httpClient.request(request) { result in
+                if case .success(let response) = result {
+                    switch response.statusCode! {
+                    case 201:
+                        let locationURL = response.headers["Location"] as! String
+                        completion(.success(locationURL))
+                        
+                    case 422:
+                        // call parsing here...
+                        completion(.failure(.emailTaken))
+                        
+                    case 400...499:
+                        completion(.failure(.client))
+                        
+                    case 500...599:
+                        completion(.failure(.server))
+                        
+                    default: break
+                    }
+                }
+            }
+        }
+    }
                 }
             }
         }

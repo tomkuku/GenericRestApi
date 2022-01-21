@@ -14,6 +14,7 @@
 		7201858027906F140021B813 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7201857F27906F140021B813 /* Assets.xcassets */; };
 		7201858327906F140021B813 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7201858127906F140021B813 /* LaunchScreen.storyboard */; };
 		7201858E27906F140021B813 /* RestApiManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7201858D27906F140021B813 /* RestApiManagerTests.swift */; };
+		721C7E49279A33060007815F /* UsersTestFile.json in Resources */ = {isa = PBXBuildFile; fileRef = 72B9E2C12798369900B703B7 /* UsersTestFile.json */; };
 		72B4CF01279768C7007AB50B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4CF00279768C7007AB50B /* User.swift */; };
 		72B4CF0327976EF2007AB50B /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4CF0227976EF2007AB50B /* HTTPClient.swift */; };
 		72B4CF0527980EC1007AB50B /* JSONCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4CF0427980EC1007AB50B /* JSONCoder.swift */; };
@@ -233,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				721C7E49279A33060007815F /* UsersTestFile.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

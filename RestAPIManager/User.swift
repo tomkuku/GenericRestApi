@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct User {
+struct User: Decodable, Encodable {
     
-    enum Gender: String, Decodable {
+    enum Gender: String, Codable {
         case male
         case female
     }
     
-    enum State: String, Decodable {
+    enum State: String, Codable {
         case active
         case inactive
     }
@@ -27,8 +27,9 @@ struct User {
 }
 
 
-extension User: Decodable {
-    enum CodingKeys: String, CodingKey {
+extension User {
+    
+    private enum CodingKeys: String, CodingKey {
         case id
         case name
         case email
@@ -43,5 +44,13 @@ extension User: Decodable {
         self.email = try container.decode(String.self, forKey: .email)
         self.gender = try container.decode(Gender.self, forKey: .gender)
         self.state = try container.decode(State.self, forKey: .state)
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(name, forKey: .name)
+        try container.encode(email, forKey: .email)
+        try container.encodeIfPresent(gender, forKey: .gender)
+        try container.encodeIfPresent(state, forKey: .state)
     }
 }

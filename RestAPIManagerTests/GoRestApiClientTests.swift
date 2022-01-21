@@ -23,11 +23,11 @@ class GoRestAPIClient: XCTestCase {
     
     func test_getUsers() {
         let expectation = expectation(description: "get.users")
-        var users: [User] = []
         var isMainThread: Bool!
+        var result: Result<[User], GoRestGetUsersRequestError>!
         
         sut.getUsers {
-            users = $0
+            result = $0
             isMainThread = Thread.current.isMainThread
             expectation.fulfill()
         }
@@ -35,11 +35,46 @@ class GoRestAPIClient: XCTestCase {
         waitForExpectations(timeout: 4, handler: nil)
         
         XCTAssertFalse(isMainThread)
-        XCTAssertEqual(users.count, 2)
-        XCTAssertEqual(users.first?.id, 59)
-        XCTAssertEqual(users.first?.name, "John Smith")
-        XCTAssertEqual(users.first?.email, "john.smith@gmail.com")
-        XCTAssertEqual(users.first?.gender, .male)
-        XCTAssertEqual(users.first?.state, .active)
+        
+        switch result {
+        case .success(let users):
+            XCTAssertEqual(users.count, 2)
+            XCTAssertEqual(users.first?.id, 59)
+            XCTAssertEqual(users.first?.name, "John Smith")
+            XCTAssertEqual(users.first?.email, "john.smith@gmail.com")
+            XCTAssertEqual(users.first?.gender, .male)
+            XCTAssertEqual(users.first?.state, .active)
+        case .failure(_), .none:
+            XCTFail()
+        }
+    }
+    
+    func tests_addUser() {
+        let expectation = expectation(description: "add.user")
+        var isMainThread: Bool!
+        var result: Result<String, GoRestAddUserRequestError>!
+        
+        let user = User(id: 324,
+                        name: "Steve",
+                        email: "Jobs",
+                        gender: .male,
+                        state: .inactive)
+        
+        sut.addUser(user) {
+            result = $0
+            isMainThread = Thread.current.isMainThread
+            expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 4, handler: nil)
+        
+        XCTAssertFalse(isMainThread)
+
+        switch result {
+        case .success(let url):
+            XCTAssertEqual(url, "https://gorest.co.in/public/v1/users/3656")
+        case .failure(_), .none:
+            XCTFail()
+        }
     }
 }
