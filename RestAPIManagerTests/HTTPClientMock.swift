@@ -23,6 +23,9 @@ final class HTTPClientMock: HTTPClient {
             response.headers["Location"] = "https://gorest.co.in/public/v1/users/3656"
             response.statusCode = 201
             
+        case (_, HTTPMethod.patch.rawValue):
+            response.statusCode = 200
+            
         case (_, HTTPMethod.delete.rawValue):
             response.statusCode = 204
         

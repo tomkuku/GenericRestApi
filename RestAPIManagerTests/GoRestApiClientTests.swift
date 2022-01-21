@@ -78,25 +78,53 @@ class GoRestAPIClient: XCTestCase {
         }
     }
     
-    func tests_deleteUser() {
-        let expectation = expectation(description: "delete.user")
+    func tests_updateUser() {
+        let expectation = expectation(description: "update.user")
         var isMainThread: Bool!
-        var result: Result<Void, GoRestDeleteUserRequestError>!
-        
+        var result: Result<Void, GoRestUpdateUserRequestError>!
+
         let user = User(id: 672,
                         name: "Bill",
                         email: "Gates",
                         gender: .male,
                         state: .inactive)
-        
+
+        sut.updateUser(user) {
+            result = $0
+            isMainThread = Thread.current.isMainThread
+            expectation.fulfill()
+        }
+
+        waitForExpectations(timeout: 4, handler: nil)
+
+        XCTAssertFalse(isMainThread)
+
+        switch result {
+        case .success(): break
+        case .failure(_), .none:
+            XCTFail()
+        }
+    }
+
+    func tests_deleteUser() {
+        let expectation = expectation(description: "delete.user")
+        var isMainThread: Bool!
+        var result: Result<Void, GoRestDeleteUserRequestError>!
+
+        let user = User(id: 672,
+                        name: "Bill",
+                        email: "Gates",
+                        gender: .male,
+                        state: .inactive)
+
         sut.deleteUser(user) {
             result = $0
             isMainThread = Thread.current.isMainThread
             expectation.fulfill()
         }
-        
+
         waitForExpectations(timeout: 4, handler: nil)
-        
+
         XCTAssertFalse(isMainThread)
 
         switch result {
