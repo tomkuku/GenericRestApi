@@ -13,20 +13,23 @@
 		7201857E27906F130021B813 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7201857C27906F130021B813 /* Main.storyboard */; };
 		7201858027906F140021B813 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7201857F27906F140021B813 /* Assets.xcassets */; };
 		7201858327906F140021B813 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7201858127906F140021B813 /* LaunchScreen.storyboard */; };
-		7201858E27906F140021B813 /* RestAPIManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7201858D27906F140021B813 /* RestAPIManagerTests.swift */; };
-		7201859827906F140021B813 /* RestAPIManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7201859727906F140021B813 /* RestAPIManagerUITests.swift */; };
-		7201859A27906F140021B813 /* RestAPIManagerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7201859927906F140021B813 /* RestAPIManagerUITestsLaunchTests.swift */; };
+		7201858E27906F140021B813 /* RestApiManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7201858D27906F140021B813 /* RestApiManagerTests.swift */; };
+		721C7E49279A33060007815F /* UsersTestFile.json in Resources */ = {isa = PBXBuildFile; fileRef = 72B9E2C12798369900B703B7 /* UsersTestFile.json */; };
+		72B4CF01279768C7007AB50B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4CF00279768C7007AB50B /* User.swift */; };
+		72B4CF0327976EF2007AB50B /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4CF0227976EF2007AB50B /* HTTPClient.swift */; };
+		72B4CF0527980EC1007AB50B /* JSONCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4CF0427980EC1007AB50B /* JSONCoder.swift */; };
+		72B9E2C327983DFA00B703B7 /* UsersTestFile.json in Resources */ = {isa = PBXBuildFile; fileRef = 72B9E2C12798369900B703B7 /* UsersTestFile.json */; };
+		72B9E2C42798489200B703B7 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BDB3512790ABA200F68B4C /* Config.swift */; };
+		72BDB3472790A9F300F68B4C /* Config-Debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72BDB3462790A9F300F68B4C /* Config-Debug.plist */; };
+		72BDB34C2790AA1700F68B4C /* Config-Release.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72BDB34B2790AA1700F68B4C /* Config-Release.plist */; };
+		72BDB3522790ABA200F68B4C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BDB3512790ABA200F68B4C /* Config.swift */; };
+		72D5FC972798279600328CF9 /* GoRestApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D5FC962798279600328CF9 /* GoRestApiClientTests.swift */; };
+		72D5FC992798291B00328CF9 /* HTTPClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D5FC982798291B00328CF9 /* HTTPClientMock.swift */; };
+		72F60D152797472500952737 /* GoRestApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F60D142797472500952737 /* GoRestApiClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		7201858A27906F140021B813 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7201856B27906F130021B813 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7201857227906F130021B813;
-			remoteInfo = RestAPIManager;
-		};
-		7201859427906F140021B813 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7201856B27906F130021B813 /* Project object */;
 			proxyType = 1;
@@ -45,10 +48,18 @@
 		7201858227906F140021B813 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7201858427906F140021B813 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7201858927906F140021B813 /* RestAPIManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RestAPIManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7201858D27906F140021B813 /* RestAPIManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAPIManagerTests.swift; sourceTree = "<group>"; };
-		7201859327906F140021B813 /* RestAPIManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RestAPIManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7201859727906F140021B813 /* RestAPIManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAPIManagerUITests.swift; sourceTree = "<group>"; };
-		7201859927906F140021B813 /* RestAPIManagerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAPIManagerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7201858D27906F140021B813 /* RestApiManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestApiManagerTests.swift; sourceTree = "<group>"; };
+		72B4CF00279768C7007AB50B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		72B4CF0227976EF2007AB50B /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		72B4CF0427980EC1007AB50B /* JSONCoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONCoder.swift; sourceTree = "<group>"; };
+		72B9E2C12798369900B703B7 /* UsersTestFile.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = UsersTestFile.json; sourceTree = "<group>"; };
+		72BDB33B27909E2000F68B4C /* build_config.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build_config.sh; sourceTree = "<group>"; };
+		72BDB3462790A9F300F68B4C /* Config-Debug.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Config-Debug.plist"; sourceTree = "<group>"; };
+		72BDB34B2790AA1700F68B4C /* Config-Release.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Config-Release.plist"; sourceTree = "<group>"; };
+		72BDB3512790ABA200F68B4C /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		72D5FC962798279600328CF9 /* GoRestApiClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoRestApiClientTests.swift; sourceTree = "<group>"; };
+		72D5FC982798291B00328CF9 /* HTTPClientMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientMock.swift; sourceTree = "<group>"; };
+		72F60D142797472500952737 /* GoRestApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoRestApiClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,22 +77,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7201859027906F140021B813 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		7201856A27906F130021B813 = {
 			isa = PBXGroup;
 			children = (
+				72BDB33B27909E2000F68B4C /* build_config.sh */,
+				72BDB3402790A4D700F68B4C /* Configurations */,
 				7201857527906F130021B813 /* RestAPIManager */,
 				7201858C27906F140021B813 /* RestAPIManagerTests */,
-				7201859627906F140021B813 /* RestAPIManagerUITests */,
 				7201857427906F130021B813 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,7 +96,6 @@
 			children = (
 				7201857327906F130021B813 /* RestAPIManager.app */,
 				7201858927906F140021B813 /* RestAPIManagerTests.xctest */,
-				7201859327906F140021B813 /* RestAPIManagerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,6 +106,10 @@
 				7201857627906F130021B813 /* AppDelegate.swift */,
 				7201857827906F130021B813 /* SceneDelegate.swift */,
 				7201857A27906F130021B813 /* ViewController.swift */,
+				72F60D142797472500952737 /* GoRestApiClient.swift */,
+				72B4CF0427980EC1007AB50B /* JSONCoder.swift */,
+				72B4CF0227976EF2007AB50B /* HTTPClient.swift */,
+				72B4CF00279768C7007AB50B /* User.swift */,
 				7201857C27906F130021B813 /* Main.storyboard */,
 				7201857F27906F140021B813 /* Assets.xcassets */,
 				7201858127906F140021B813 /* LaunchScreen.storyboard */,
@@ -113,18 +121,22 @@
 		7201858C27906F140021B813 /* RestAPIManagerTests */ = {
 			isa = PBXGroup;
 			children = (
-				7201858D27906F140021B813 /* RestAPIManagerTests.swift */,
+				7201858D27906F140021B813 /* RestApiManagerTests.swift */,
+				72D5FC962798279600328CF9 /* GoRestApiClientTests.swift */,
+				72D5FC982798291B00328CF9 /* HTTPClientMock.swift */,
+				72B9E2C12798369900B703B7 /* UsersTestFile.json */,
 			);
 			path = RestAPIManagerTests;
 			sourceTree = "<group>";
 		};
-		7201859627906F140021B813 /* RestAPIManagerUITests */ = {
+		72BDB3402790A4D700F68B4C /* Configurations */ = {
 			isa = PBXGroup;
 			children = (
-				7201859727906F140021B813 /* RestAPIManagerUITests.swift */,
-				7201859927906F140021B813 /* RestAPIManagerUITestsLaunchTests.swift */,
+				72BDB3462790A9F300F68B4C /* Config-Debug.plist */,
+				72BDB34B2790AA1700F68B4C /* Config-Release.plist */,
+				72BDB3512790ABA200F68B4C /* Config.swift */,
 			);
-			path = RestAPIManagerUITests;
+			path = Configurations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +149,7 @@
 				7201856F27906F130021B813 /* Sources */,
 				7201857027906F130021B813 /* Frameworks */,
 				7201857127906F130021B813 /* Resources */,
+				72BDB33C27909E5C00F68B4C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -165,24 +178,6 @@
 			productReference = 7201858927906F140021B813 /* RestAPIManagerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		7201859227906F140021B813 /* RestAPIManagerUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 720185A327906F140021B813 /* Build configuration list for PBXNativeTarget "RestAPIManagerUITests" */;
-			buildPhases = (
-				7201858F27906F140021B813 /* Sources */,
-				7201859027906F140021B813 /* Frameworks */,
-				7201859127906F140021B813 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7201859527906F140021B813 /* PBXTargetDependency */,
-			);
-			name = RestAPIManagerUITests;
-			productName = RestAPIManagerUITests;
-			productReference = 7201859327906F140021B813 /* RestAPIManagerUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -197,10 +192,6 @@
 						CreatedOnToolsVersion = 13.2.1;
 					};
 					7201858827906F140021B813 = {
-						CreatedOnToolsVersion = 13.2.1;
-						TestTargetID = 7201857227906F130021B813;
-					};
-					7201859227906F140021B813 = {
 						CreatedOnToolsVersion = 13.2.1;
 						TestTargetID = 7201857227906F130021B813;
 					};
@@ -221,7 +212,6 @@
 			targets = (
 				7201857227906F130021B813 /* RestAPIManager */,
 				7201858827906F140021B813 /* RestAPIManagerTests */,
-				7201859227906F140021B813 /* RestAPIManagerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -233,6 +223,9 @@
 			files = (
 				7201858327906F140021B813 /* LaunchScreen.storyboard in Resources */,
 				7201858027906F140021B813 /* Assets.xcassets in Resources */,
+				72B9E2C327983DFA00B703B7 /* UsersTestFile.json in Resources */,
+				72BDB34C2790AA1700F68B4C /* Config-Release.plist in Resources */,
+				72BDB3472790A9F300F68B4C /* Config-Debug.plist in Resources */,
 				7201857E27906F130021B813 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,17 +234,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7201859127906F140021B813 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				721C7E49279A33060007815F /* UsersTestFile.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		72BDB33C27909E5C00F68B4C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "source build_config.sh\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7201856F27906F130021B813 /* Sources */ = {
@@ -259,6 +266,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7201857B27906F130021B813 /* ViewController.swift in Sources */,
+				72B4CF0527980EC1007AB50B /* JSONCoder.swift in Sources */,
+				72F60D152797472500952737 /* GoRestApiClient.swift in Sources */,
+				72B4CF01279768C7007AB50B /* User.swift in Sources */,
+				72B4CF0327976EF2007AB50B /* HTTPClient.swift in Sources */,
+				72BDB3522790ABA200F68B4C /* Config.swift in Sources */,
 				7201857727906F130021B813 /* AppDelegate.swift in Sources */,
 				7201857927906F130021B813 /* SceneDelegate.swift in Sources */,
 			);
@@ -268,16 +280,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7201858E27906F140021B813 /* RestAPIManagerTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7201858F27906F140021B813 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7201859827906F140021B813 /* RestAPIManagerUITests.swift in Sources */,
-				7201859A27906F140021B813 /* RestAPIManagerUITestsLaunchTests.swift in Sources */,
+				7201858E27906F140021B813 /* RestApiManagerTests.swift in Sources */,
+				72B9E2C42798489200B703B7 /* Config.swift in Sources */,
+				72D5FC972798279600328CF9 /* GoRestApiClientTests.swift in Sources */,
+				72D5FC992798291B00328CF9 /* HTTPClientMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,11 +294,6 @@
 			isa = PBXTargetDependency;
 			target = 7201857227906F130021B813 /* RestAPIManager */;
 			targetProxy = 7201858A27906F140021B813 /* PBXContainerItemProxy */;
-		};
-		7201859527906F140021B813 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7201857227906F130021B813 /* RestAPIManager */;
-			targetProxy = 7201859427906F140021B813 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -524,40 +525,6 @@
 			};
 			name = Release;
 		};
-		720185A427906F140021B813 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = tom.kukulka.RestAPIManagerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = RestAPIManager;
-			};
-			name = Debug;
-		};
-		720185A527906F140021B813 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = tom.kukulka.RestAPIManagerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = RestAPIManager;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -584,15 +551,6 @@
 			buildConfigurations = (
 				720185A127906F140021B813 /* Debug */,
 				720185A227906F140021B813 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		720185A327906F140021B813 /* Build configuration list for PBXNativeTarget "RestAPIManagerUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				720185A427906F140021B813 /* Debug */,
-				720185A527906F140021B813 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
