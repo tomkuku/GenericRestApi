@@ -37,7 +37,6 @@ enum GoRestDeleteUserRequestError: Error {
 protocol GoRestApiClient {
     func call<R: HTTPRequest>(request: R, completion: @escaping (R.ResultType) -> Void)
     
-    func getUsers(completion: @escaping (Result<[User], GoRestGetUsersRequestError>) -> Void)
     func addUser(_ user: User, completion: @escaping (Result<String, GoRestAddUserRequestError>) -> Void)
     func updateUser(_ user: User, completion: @escaping (Result<Void, GoRestUpdateUserRequestError>) -> Void)
     func deleteUser(_ user: User, completion: @escaping (Result<Void, GoRestDeleteUserRequestError>) -> Void)
@@ -49,42 +48,6 @@ final class GoRestApiClientImpl: GoRestApiClient {
     
     init(httpClient: HTTPClient = HTTPClientImpl()) {
         self.httpClient = httpClient
-    }
-    
-    func getUsers(completion: @escaping (Result<[User], GoRestGetUsersRequestError>) -> Void) {
-        DispatchQueue.global().async {
-            let url = URL(string: "https://gorest.co.in/public/v1/users")!
-            var request = URLRequest(url: url)
-            request.httpMethod = HTTPMethod.get.rawValue
-            request.allHTTPHeaderFields = [
-                "Accept": "application/json",
-                "Content-Type": "application/json"]
-            
-            self.httpClient.request(request) { result in
-                if case .success(let response) = result {
-                    switch response.statusCode! {
-                    case 200:
-                        if let responseBody = response.body {
-                            let users: [User]? = JSONCoder.decode(from: responseBody, path: "data")
-                            completion(.success(users ?? []))
-                        } else {
-                            completion(.failure(.other))
-                        }
-                        
-                    case 400...499:
-                        completion(.failure(.client))
-                        
-                    case 500...599:
-                        completion(.failure(.server))
-                        
-                    default: break
-                    }
-                } else {
-                    print("Error")
-                    
-                }
-            }
-        }
     }
     
     func addUser(_ user: User, completion: @escaping (Result<String, GoRestAddUserRequestError>) -> Void) {

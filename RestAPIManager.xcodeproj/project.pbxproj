@@ -110,9 +110,7 @@
 				7201857627906F130021B813 /* AppDelegate.swift */,
 				7201857827906F130021B813 /* SceneDelegate.swift */,
 				7201857A27906F130021B813 /* ViewController.swift */,
-				72F60D142797472500952737 /* GoRestApiClient.swift */,
-				72BD334E279A475900068760 /* GetUsersGoRestApiRequest.swift */,
-				72BD3350279AC99400068760 /* HTTPRequest.swift */,
+				72BD3352279B0A4000068760 /* RestApi */,
 				72B4CF0427980EC1007AB50B /* JSONCoder.swift */,
 				72B4CF0227976EF2007AB50B /* HTTPClient.swift */,
 				72B4CF00279768C7007AB50B /* User.swift */,
@@ -133,6 +131,16 @@
 				72B9E2C12798369900B703B7 /* UsersTestFile.json */,
 			);
 			path = RestAPIManagerTests;
+			sourceTree = "<group>";
+		};
+		72BD3352279B0A4000068760 /* RestApi */ = {
+			isa = PBXGroup;
+			children = (
+				72F60D142797472500952737 /* GoRestApiClient.swift */,
+				72BD3350279AC99400068760 /* HTTPRequest.swift */,
+				72BD334E279A475900068760 /* GetUsersGoRestApiRequest.swift */,
+			);
+			path = RestApi;
 			sourceTree = "<group>";
 		};
 		72BDB3402790A4D700F68B4C /* Configurations */ = {
