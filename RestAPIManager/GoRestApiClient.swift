@@ -35,6 +35,8 @@ enum GoRestDeleteUserRequestError: Error {
 }
 
 protocol GoRestApiClient {
+    func call<R: HTTPRequest>(request: R, completion: @escaping (R.ResultType) -> Void)
+    
     func getUsers(completion: @escaping (Result<[User], GoRestGetUsersRequestError>) -> Void)
     func addUser(_ user: User, completion: @escaping (Result<String, GoRestAddUserRequestError>) -> Void)
     func updateUser(_ user: User, completion: @escaping (Result<Void, GoRestUpdateUserRequestError>) -> Void)
@@ -199,6 +201,21 @@ final class GoRestApiClientImpl: GoRestApiClient {
                         
                     default: break
                     }
+                }
+            }
+        }
+    }
+    
+    func call<R: HTTPRequest>(request: R, completion: @escaping (R.ResultType) -> Void) {
+        DispatchQueue.global().async {
+            self.httpClient.request(request) { result in
+                switch result {
+                case .success(let response):
+                    request.handleResponse(response, completion: completion)
+                    
+                case .failure(let httpClientError):
+                    completion(.failure(.init(httpClient: httpClientError)))
+                    
                 }
             }
         }
