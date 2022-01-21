@@ -19,6 +19,13 @@ enum HTTPClientError: Error {
     case noInternatConnection
 }
 
+struct HTTPRequest {
+    var method: HTTPMethod
+    var url: URL
+    var headers: [String: String]?
+    var body: Data?
+}
+
 struct HTTPResponse {
     var statusCode: Int!
     var headers: [AnyHashable: Any] = [:]
@@ -26,7 +33,7 @@ struct HTTPResponse {
 }
 
 protocol HTTPClient {
-    func request<T: HTTPRequest>(_ request: T, completion: @escaping (Result<HTTPResponse, HTTPClientError>) -> Void)
+    func request(_ request: HTTPRequest, completion: @escaping (Result<HTTPResponse, HTTPClientError>) -> Void)
 }
 
 final class HTTPClientImpl: HTTPClient {
@@ -41,7 +48,7 @@ final class HTTPClientImpl: HTTPClient {
         self.session = URLSession(configuration: configuration)
     }
     
-    func request<T: HTTPRequest>(_ request: T, completion: @escaping (Result<HTTPResponse, HTTPClientError>) -> Void) {
+    func request(_ request: HTTPRequest, completion: @escaping (Result<HTTPResponse, HTTPClientError>) -> Void) {
         var urlRequest = URLRequest(url: request.url)
         urlRequest.httpMethod = request.method.rawValue
         urlRequest.allHTTPHeaderFields = request.headers

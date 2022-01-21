@@ -1,5 +1,5 @@
 //
-//  DeleteUserGoRestApiRequest.swift
+//  DeleteUserGoRestAPIRequest.swift
 //  RestAPIManager
 //
 //  Created by Tomasz Kukułka on 21/01/2022.
@@ -7,8 +7,9 @@
 
 import Foundation
 
-struct DeleteUserGoRestApiRequest: HTTPRequest {
+struct DeleteUserGoRestApiRequest: RestAPICall {
     
+    typealias Client = GoRestAPIClient
     typealias ResultSuccess = Void
     typealias ResultFailure = FailureError
     
@@ -24,7 +25,7 @@ struct DeleteUserGoRestApiRequest: HTTPRequest {
         }
     }
     
-    var url: URL!
+    var url: URL
     var method: HTTPMethod! = .delete
     var body: Data?
     var headers: [String : String] = [

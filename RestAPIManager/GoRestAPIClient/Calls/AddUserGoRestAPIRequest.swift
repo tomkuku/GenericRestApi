@@ -1,5 +1,5 @@
 //
-//  UpdateUserGoRestApiRequest.swift
+//  AddUserGoRestAPIRequest.swift
 //  RestAPIManager
 //
 //  Created by Tomasz Kukułka on 21/01/2022.
@@ -7,15 +7,15 @@
 
 import Foundation
 
-struct UpdateUserGoRestApiRequest: HTTPRequest {
+struct AddUserGoRestApiRequest: RestAPICall {
     
-    typealias ResultSuccess = Void
+    typealias Client = GoRestAPIClient
+    typealias ResultSuccess = URL
     typealias ResultFailure = FailureError
     
     enum FailureError: ResultFailureError {
-        case invalidUserId
-        case emailTaken
         case nameTaken
+        case emailTaken
         case server
         case client
         case other
@@ -26,8 +26,8 @@ struct UpdateUserGoRestApiRequest: HTTPRequest {
         }
     }
     
-    var url: URL!
-    var method: HTTPMethod! = .patch
+    var url: URL
+    var method: HTTPMethod! = .post
     var body: Data?
     var headers: [String : String] = [
         "Accept": "application/json",
@@ -35,21 +35,18 @@ struct UpdateUserGoRestApiRequest: HTTPRequest {
         "Authorization": "Bearer \(Config.apiKey)"]
     
     init(_ user: User) {
-        self.url = URL(string: "https://gorest.co.in/public/v1/users/\(String(describing: user.id))")!
         self.body = JSONCoder.encode(object: user)
+        self.url = Client.Call.addUser.url
     }
     
     func handleResponse(_ response: HTTPResponse, completion: (ResultType) -> Void) {
         switch response.statusCode! {
-        case 200:
-            completion(.success(()))
-            
-        case 404:
-            completion(.failure(.invalidUserId))
-            
-        case 422:
-            // parsing here...
-            completion(.failure(.emailTaken))
+        case 201:
+            if let location = response.headers["Location"] as? String {
+                completion(.success(URL(string: location)!))
+            } else {
+                completion(.failure(.other))
+            }
             
         case 400...499:
             completion(.failure(.client))
