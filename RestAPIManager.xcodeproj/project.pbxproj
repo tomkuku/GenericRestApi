@@ -22,6 +22,7 @@
 		72B9E2C42798489200B703B7 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BDB3512790ABA200F68B4C /* Config.swift */; };
 		72BD334F279A475900068760 /* GetUsersGoRestApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BD334E279A475900068760 /* GetUsersGoRestApiRequest.swift */; };
 		72BD3351279AC99400068760 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BD3350279AC99400068760 /* HTTPRequest.swift */; };
+		72BD3354279B0AEE00068760 /* AddUserGoRestApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BD3353279B0AEE00068760 /* AddUserGoRestApiRequest.swift */; };
 		72BDB3472790A9F300F68B4C /* Config-Debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72BDB3462790A9F300F68B4C /* Config-Debug.plist */; };
 		72BDB34C2790AA1700F68B4C /* Config-Release.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72BDB34B2790AA1700F68B4C /* Config-Release.plist */; };
 		72BDB3522790ABA200F68B4C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BDB3512790ABA200F68B4C /* Config.swift */; };
@@ -57,6 +58,7 @@
 		72B9E2C12798369900B703B7 /* UsersTestFile.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = UsersTestFile.json; sourceTree = "<group>"; };
 		72BD334E279A475900068760 /* GetUsersGoRestApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUsersGoRestApiRequest.swift; sourceTree = "<group>"; };
 		72BD3350279AC99400068760 /* HTTPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
+		72BD3353279B0AEE00068760 /* AddUserGoRestApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserGoRestApiRequest.swift; sourceTree = "<group>"; };
 		72BDB33B27909E2000F68B4C /* build_config.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build_config.sh; sourceTree = "<group>"; };
 		72BDB3462790A9F300F68B4C /* Config-Debug.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Config-Debug.plist"; sourceTree = "<group>"; };
 		72BDB34B2790AA1700F68B4C /* Config-Release.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Config-Release.plist"; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				72F60D142797472500952737 /* GoRestApiClient.swift */,
 				72BD3350279AC99400068760 /* HTTPRequest.swift */,
 				72BD334E279A475900068760 /* GetUsersGoRestApiRequest.swift */,
+				72BD3353279B0AEE00068760 /* AddUserGoRestApiRequest.swift */,
 			);
 			path = RestApi;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				7201857727906F130021B813 /* AppDelegate.swift in Sources */,
 				72BD334F279A475900068760 /* GetUsersGoRestApiRequest.swift in Sources */,
 				7201857927906F130021B813 /* SceneDelegate.swift in Sources */,
+				72BD3354279B0AEE00068760 /* AddUserGoRestApiRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
