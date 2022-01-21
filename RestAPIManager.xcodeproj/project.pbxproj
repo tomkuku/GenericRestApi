@@ -20,6 +20,11 @@
 		72B4CF0527980EC1007AB50B /* JSONCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4CF0427980EC1007AB50B /* JSONCoder.swift */; };
 		72B9E2C327983DFA00B703B7 /* UsersTestFile.json in Resources */ = {isa = PBXBuildFile; fileRef = 72B9E2C12798369900B703B7 /* UsersTestFile.json */; };
 		72B9E2C42798489200B703B7 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BDB3512790ABA200F68B4C /* Config.swift */; };
+		72BD334F279A475900068760 /* GetUsersGoRestApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BD334E279A475900068760 /* GetUsersGoRestApiRequest.swift */; };
+		72BD3351279AC99400068760 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BD3350279AC99400068760 /* HTTPRequest.swift */; };
+		72BD3354279B0AEE00068760 /* AddUserGoRestApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BD3353279B0AEE00068760 /* AddUserGoRestApiRequest.swift */; };
+		72BD3356279B136E00068760 /* DeleteUserGoRestApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BD3355279B136E00068760 /* DeleteUserGoRestApiRequest.swift */; };
+		72BD3358279B159A00068760 /* UpdateUserGoRestApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BD3357279B159A00068760 /* UpdateUserGoRestApiRequest.swift */; };
 		72BDB3472790A9F300F68B4C /* Config-Debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72BDB3462790A9F300F68B4C /* Config-Debug.plist */; };
 		72BDB34C2790AA1700F68B4C /* Config-Release.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72BDB34B2790AA1700F68B4C /* Config-Release.plist */; };
 		72BDB3522790ABA200F68B4C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BDB3512790ABA200F68B4C /* Config.swift */; };
@@ -53,6 +58,11 @@
 		72B4CF0227976EF2007AB50B /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		72B4CF0427980EC1007AB50B /* JSONCoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONCoder.swift; sourceTree = "<group>"; };
 		72B9E2C12798369900B703B7 /* UsersTestFile.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = UsersTestFile.json; sourceTree = "<group>"; };
+		72BD334E279A475900068760 /* GetUsersGoRestApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUsersGoRestApiRequest.swift; sourceTree = "<group>"; };
+		72BD3350279AC99400068760 /* HTTPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
+		72BD3353279B0AEE00068760 /* AddUserGoRestApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserGoRestApiRequest.swift; sourceTree = "<group>"; };
+		72BD3355279B136E00068760 /* DeleteUserGoRestApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUserGoRestApiRequest.swift; sourceTree = "<group>"; };
+		72BD3357279B159A00068760 /* UpdateUserGoRestApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserGoRestApiRequest.swift; sourceTree = "<group>"; };
 		72BDB33B27909E2000F68B4C /* build_config.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build_config.sh; sourceTree = "<group>"; };
 		72BDB3462790A9F300F68B4C /* Config-Debug.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Config-Debug.plist"; sourceTree = "<group>"; };
 		72BDB34B2790AA1700F68B4C /* Config-Release.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Config-Release.plist"; sourceTree = "<group>"; };
@@ -106,7 +116,7 @@
 				7201857627906F130021B813 /* AppDelegate.swift */,
 				7201857827906F130021B813 /* SceneDelegate.swift */,
 				7201857A27906F130021B813 /* ViewController.swift */,
-				72F60D142797472500952737 /* GoRestApiClient.swift */,
+				72BD3352279B0A4000068760 /* RestApi */,
 				72B4CF0427980EC1007AB50B /* JSONCoder.swift */,
 				72B4CF0227976EF2007AB50B /* HTTPClient.swift */,
 				72B4CF00279768C7007AB50B /* User.swift */,
@@ -127,6 +137,19 @@
 				72B9E2C12798369900B703B7 /* UsersTestFile.json */,
 			);
 			path = RestAPIManagerTests;
+			sourceTree = "<group>";
+		};
+		72BD3352279B0A4000068760 /* RestApi */ = {
+			isa = PBXGroup;
+			children = (
+				72F60D142797472500952737 /* GoRestApiClient.swift */,
+				72BD3350279AC99400068760 /* HTTPRequest.swift */,
+				72BD334E279A475900068760 /* GetUsersGoRestApiRequest.swift */,
+				72BD3353279B0AEE00068760 /* AddUserGoRestApiRequest.swift */,
+				72BD3357279B159A00068760 /* UpdateUserGoRestApiRequest.swift */,
+				72BD3355279B136E00068760 /* DeleteUserGoRestApiRequest.swift */,
+			);
+			path = RestApi;
 			sourceTree = "<group>";
 		};
 		72BDB3402790A4D700F68B4C /* Configurations */ = {
@@ -265,14 +288,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72BD3358279B159A00068760 /* UpdateUserGoRestApiRequest.swift in Sources */,
+				72BD3356279B136E00068760 /* DeleteUserGoRestApiRequest.swift in Sources */,
 				7201857B27906F130021B813 /* ViewController.swift in Sources */,
 				72B4CF0527980EC1007AB50B /* JSONCoder.swift in Sources */,
 				72F60D152797472500952737 /* GoRestApiClient.swift in Sources */,
 				72B4CF01279768C7007AB50B /* User.swift in Sources */,
 				72B4CF0327976EF2007AB50B /* HTTPClient.swift in Sources */,
+				72BD3351279AC99400068760 /* HTTPRequest.swift in Sources */,
 				72BDB3522790ABA200F68B4C /* Config.swift in Sources */,
 				7201857727906F130021B813 /* AppDelegate.swift in Sources */,
+				72BD334F279A475900068760 /* GetUsersGoRestApiRequest.swift in Sources */,
 				7201857927906F130021B813 /* SceneDelegate.swift in Sources */,
+				72BD3354279B0AEE00068760 /* AddUserGoRestApiRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

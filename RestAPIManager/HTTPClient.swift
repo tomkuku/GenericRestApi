@@ -27,6 +27,7 @@ struct HTTPResponse {
 
 protocol HTTPClient {
     func request(_ request: URLRequest, completion: @escaping (Result<HTTPResponse, HTTPClientError>) -> Void)
+    func request<T: HTTPRequest>(_ request: T, completion: @escaping (Result<HTTPResponse, HTTPClientError>) -> Void)
 }
 
 final class HTTPClientImpl: HTTPClient {
@@ -59,6 +60,31 @@ final class HTTPClientImpl: HTTPClient {
             
             completion(.success(httpResponse))
             return
+        }.resume()
+    }
+    
+    func request<T: HTTPRequest>(_ request: T, completion: @escaping (Result<HTTPResponse, HTTPClientError>) -> Void) {
+        var urlRequest = URLRequest(url: request.url)
+        urlRequest.httpMethod = request.method.rawValue
+        urlRequest.allHTTPHeaderFields = request.headers
+        urlRequest.httpBody = request.body
+        
+        self.session.dataTask(with: urlRequest) { data, response, error in
+            if error != nil {
+                completion(.failure(.internal))
+                return
+            }
+            
+            guard let httpUrlResponse = response as? HTTPURLResponse else {
+                completion(.failure(.internal))
+                return
+            }
+            
+            let httpResponse = HTTPResponse(statusCode: httpUrlResponse.statusCode,
+                                            headers: httpUrlResponse.allHeaderFields,
+                                            body: data)
+            
+            completion(.success(httpResponse))
         }.resume()
     }
 }

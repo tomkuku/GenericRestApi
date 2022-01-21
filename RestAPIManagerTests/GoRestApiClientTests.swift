@@ -23,16 +23,18 @@ class GoRestAPIClient: XCTestCase {
     
     func test_getUsers() {
         let expectation = expectation(description: "get.users")
-        var isMainThread: Bool!
-        var result: Result<[User], GoRestGetUsersRequestError>!
         
-        sut.getUsers {
+        let getUseresRequest = GetUsersGoRestApiRequest()
+        var result: Result<GetUsersGoRestApiRequest.ResultSuccess, GetUsersGoRestApiRequest.ResultFailure>!
+        var isMainThread: Bool!
+        
+        sut.call(request: getUseresRequest) {
             result = $0
             isMainThread = Thread.current.isMainThread
             expectation.fulfill()
         }
         
-        waitForExpectations(timeout: 4, handler: nil)
+        waitForExpectations(timeout: 10, handler: nil)
         
         XCTAssertFalse(isMainThread)
         
@@ -51,28 +53,26 @@ class GoRestAPIClient: XCTestCase {
     
     func tests_addUser() {
         let expectation = expectation(description: "add.user")
+        
+        let user = User(id: 324, name: "Steve", email: "Jobs", gender: .male, state: .active)
+        
+        let addUserRequest = AddUserGoRestApiRequest(user)
+        var result: Result<AddUserGoRestApiRequest.ResultSuccess, AddUserGoRestApiRequest.ResultFailure>!
         var isMainThread: Bool!
-        var result: Result<String, GoRestAddUserRequestError>!
         
-        let user = User(id: 324,
-                        name: "Steve",
-                        email: "Jobs",
-                        gender: .male,
-                        state: .inactive)
-        
-        sut.addUser(user) {
+        sut.call(request: addUserRequest) {
             result = $0
             isMainThread = Thread.current.isMainThread
             expectation.fulfill()
         }
         
-        waitForExpectations(timeout: 4, handler: nil)
+        waitForExpectations(timeout: 10, handler: nil)
         
         XCTAssertFalse(isMainThread)
-
+        
         switch result {
         case .success(let url):
-            XCTAssertEqual(url, "https://gorest.co.in/public/v1/users/3656")
+            XCTAssertEqual(url, URL(string: "https://gorest.co.in/public/v1/users/3656")!)
         case .failure(_), .none:
             XCTFail()
         }
@@ -80,25 +80,23 @@ class GoRestAPIClient: XCTestCase {
     
     func tests_updateUser() {
         let expectation = expectation(description: "update.user")
+        
+        let user = User(id: 324, name: "Steve", email: "Jobs", gender: .male, state: .inactive)
+        
+        let deleteUserRequest = UpdateUserGoRestApiRequest(user)
+        var result: Result<UpdateUserGoRestApiRequest.ResultSuccess, UpdateUserGoRestApiRequest.ResultFailure>!
         var isMainThread: Bool!
-        var result: Result<Void, GoRestUpdateUserRequestError>!
-
-        let user = User(id: 672,
-                        name: "Bill",
-                        email: "Gates",
-                        gender: .male,
-                        state: .inactive)
-
-        sut.updateUser(user) {
+        
+        sut.call(request: deleteUserRequest) {
             result = $0
             isMainThread = Thread.current.isMainThread
             expectation.fulfill()
         }
-
-        waitForExpectations(timeout: 4, handler: nil)
-
+        
+        waitForExpectations(timeout: 10, handler: nil)
+        
         XCTAssertFalse(isMainThread)
-
+        
         switch result {
         case .success(): break
         case .failure(_), .none:
@@ -108,25 +106,23 @@ class GoRestAPIClient: XCTestCase {
 
     func tests_deleteUser() {
         let expectation = expectation(description: "delete.user")
+        
+        let user = User(id: 324, name: "Steve", email: "Jobs", gender: .male, state: .inactive)
+        
+        let deleteUserRequest = DeleteUserGoRestApiRequest(user)
+        var result: Result<DeleteUserGoRestApiRequest.ResultSuccess, DeleteUserGoRestApiRequest.ResultFailure>!
         var isMainThread: Bool!
-        var result: Result<Void, GoRestDeleteUserRequestError>!
-
-        let user = User(id: 672,
-                        name: "Bill",
-                        email: "Gates",
-                        gender: .male,
-                        state: .inactive)
-
-        sut.deleteUser(user) {
+        
+        sut.call(request: deleteUserRequest) {
             result = $0
             isMainThread = Thread.current.isMainThread
             expectation.fulfill()
         }
-
-        waitForExpectations(timeout: 4, handler: nil)
-
+        
+        waitForExpectations(timeout: 10, handler: nil)
+        
         XCTAssertFalse(isMainThread)
-
+        
         switch result {
         case .success(): break
         case .failure(_), .none:
