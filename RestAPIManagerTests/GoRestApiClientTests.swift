@@ -108,25 +108,23 @@ class GoRestAPIClient: XCTestCase {
 
     func tests_deleteUser() {
         let expectation = expectation(description: "delete.user")
+        
+        let user = User(id: 324, name: "Steve", email: "Jobs", gender: .male, state: .inactive)
+        
+        let deleteUserRequest = DeleteUserGoRestApiRequest(user)
+        var result: Result<DeleteUserGoRestApiRequest.ResultSuccess, DeleteUserGoRestApiRequest.ResultFailure>!
         var isMainThread: Bool!
-        var result: Result<Void, GoRestDeleteUserRequestError>!
-
-        let user = User(id: 672,
-                        name: "Bill",
-                        email: "Gates",
-                        gender: .male,
-                        state: .inactive)
-
-        sut.deleteUser(user) {
+        
+        sut.call(request: deleteUserRequest) {
             result = $0
             isMainThread = Thread.current.isMainThread
             expectation.fulfill()
         }
-
-        waitForExpectations(timeout: 4, handler: nil)
-
+        
+        waitForExpectations(timeout: 10, handler: nil)
+        
         XCTAssertFalse(isMainThread)
-
+        
         switch result {
         case .success(): break
         case .failure(_), .none:
