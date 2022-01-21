@@ -22,6 +22,10 @@ final class HTTPClientMock: HTTPClient {
         case ("https://gorest.co.in/public/v1/users", HTTPMethod.post.rawValue):
             response.headers["Location"] = "https://gorest.co.in/public/v1/users/3656"
             response.statusCode = 201
+            
+        case (_, HTTPMethod.delete.rawValue):
+            response.statusCode = 204
+        
         default:
             break
         }
