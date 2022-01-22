@@ -122,7 +122,7 @@
 				72BD3352279B0A4000068760 /* GoRestAPIClient */,
 				72B4CF0427980EC1007AB50B /* JSONCoder.swift */,
 				72B4CF0227976EF2007AB50B /* HTTPClient.swift */,
-				72B4CF00279768C7007AB50B /* User.swift */,
+				72BD335D279B848A00068760 /* Model */,
 				7201857C27906F130021B813 /* Main.storyboard */,
 				7201857F27906F140021B813 /* Assets.xcassets */,
 				7201858127906F140021B813 /* LaunchScreen.storyboard */,
@@ -169,6 +169,14 @@
 				72BD3355279B136E00068760 /* DeleteUserGoRestAPIRequest.swift */,
 			);
 			path = Calls;
+			sourceTree = "<group>";
+		};
+		72BD335D279B848A00068760 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				72B4CF00279768C7007AB50B /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		72BDB3402790A4D700F68B4C /* Configurations */ = {

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AddUserGoRestApiRequest: RestAPICall {
+struct AddUserGoRestAPICall: RestAPICall {
     
     typealias Client = GoRestAPIClient
     typealias ResultSuccess = URL
@@ -27,7 +27,7 @@ struct AddUserGoRestApiRequest: RestAPICall {
     }
     
     var url: URL
-    var method: HTTPMethod! = .post
+    var method: HTTPMethod = .post
     var body: Data?
     var headers: [String : String] = [
         "Accept": "application/json",
@@ -36,7 +36,7 @@ struct AddUserGoRestApiRequest: RestAPICall {
     
     init(_ user: User) {
         self.body = JSONCoder.encode(object: user)
-        self.url = Client.Call.addUser.url
+        self.url = GoRestAPIClient.Call.addUser.url
     }
     
     func handleResponse(_ response: HTTPResponse, completion: (ResultType) -> Void) {

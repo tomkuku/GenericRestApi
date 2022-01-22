@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UpdateUserGoRestApiRequest: RestAPICall {
+struct UpdateUserGoRestAPICall: RestAPICall {
     
     typealias Client = GoRestAPIClient
     typealias ResultSuccess = Void
@@ -28,7 +28,7 @@ struct UpdateUserGoRestApiRequest: RestAPICall {
     }
     
     var url: URL
-    var method: HTTPMethod! = .patch
+    var method: HTTPMethod = .patch
     var body: Data?
     var headers: [String : String] = [
         "Accept": "application/json",
@@ -36,7 +36,7 @@ struct UpdateUserGoRestApiRequest: RestAPICall {
         "Authorization": "Bearer \(Config.apiKey)"]
     
     init(_ user: User) {
-        self.url = URL(string: "https://gorest.co.in/public/v1/users/\(String(describing: user.id))")!
+        self.url = GoRestAPIClient.Call.updateUser(user).url
         self.body = JSONCoder.encode(object: user)
     }
     

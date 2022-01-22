@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GetUsersGoRestAPIRequest: RestAPICall {
+struct GetUsersGoRestAPICall: RestAPICall {
         
     typealias ResultSuccess = [User]
     typealias ResultFailure = FailureError
@@ -25,14 +25,14 @@ struct GetUsersGoRestAPIRequest: RestAPICall {
     }
     
     var url: URL
-    var method: HTTPMethod! = .get
+    var method: HTTPMethod = .get
     var body: Data? = nil
     var headers: [String : String] = [
         "Accept": "application/json",
         "Content-Type": "application/json"]
     
     init() {
-        self.url = Client.Call.getUsers.url
+        self.url = GoRestAPIClient.Call.getUsers.url
     }
     
     func handleResponse(_ response: HTTPResponse, completion: (ResultType) -> Void) {

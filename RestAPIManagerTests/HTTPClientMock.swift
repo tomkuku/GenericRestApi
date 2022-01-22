@@ -10,7 +10,7 @@ import Foundation
 @testable import RestAPIManager
 
 final class HTTPClientMock: HTTPClient {
-    func request<T: HTTPRequest>(_ request: T, completion: @escaping (Result<HTTPResponse, HTTPClientError>) -> Void) {
+    func request(_ request: HTTPRequest, completion: @escaping (Result<HTTPResponse, HTTPClientError>) -> Void) {
         var response = HTTPResponse()
         
         switch (request.url.absoluteString, request.method) {

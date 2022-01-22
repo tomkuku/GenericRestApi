@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DeleteUserGoRestApiRequest: RestAPICall {
+struct DeleteUserGoRestAPICall: RestAPICall {
     
     typealias Client = GoRestAPIClient
     typealias ResultSuccess = Void
@@ -26,7 +26,7 @@ struct DeleteUserGoRestApiRequest: RestAPICall {
     }
     
     var url: URL
-    var method: HTTPMethod! = .delete
+    var method: HTTPMethod = .delete
     var body: Data?
     var headers: [String : String] = [
         "Accept": "application/json",
@@ -34,7 +34,7 @@ struct DeleteUserGoRestApiRequest: RestAPICall {
         "Authorization": "Bearer \(Config.apiKey)"]
     
     init(_ user: User) {
-        self.url = URL(string: "https://gorest.co.in/public/v1/users/\(String(describing: user.id))")!
+        self.url = GoRestAPIClient.Call.deleteUser(user).url
     }
     
     func handleResponse(_ response: HTTPResponse, completion: (ResultType) -> Void) {

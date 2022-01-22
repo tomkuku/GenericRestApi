@@ -9,9 +9,7 @@ import Foundation
 
 final class GoRestAPIClient: RestAPIClient {
     
-    typealias Call = GoRestCall
-   
-    enum GoRestCall: RestApiCallType {
+    enum Call {
         case getUsers
         case addUser
         case updateUser(User)
@@ -40,7 +38,7 @@ final class GoRestAPIClient: RestAPIClient {
         self.httpClient = httpClient
     }
     
-    func call<C: RestApiCall>(_ call: C, completion: @escaping (C.ResultType) -> Void) {
+    func call<C: RestAPICall>(_ call: C, completion: @escaping (C.ResultType) -> Void) {
         DispatchQueue.global().async {
             let httpRequest = HTTPRequest(method: call.method,
                                           url: call.url,
