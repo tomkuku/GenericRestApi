@@ -1,5 +1,5 @@
 //
-//  DeleteUserGoRestApiRequest.swift
+//  UpdateUserGoRestAPIRequest.swift
 //  RestAPIManager
 //
 //  Created by Tomasz Kukułka on 21/01/2022.
@@ -7,13 +7,16 @@
 
 import Foundation
 
-struct DeleteUserGoRestApiRequest: HTTPRequest {
+struct UpdateUserGoRestAPICall: RestAPICall {
     
+    typealias Client = GoRestAPIClient
     typealias ResultSuccess = Void
     typealias ResultFailure = FailureError
     
     enum FailureError: ResultFailureError {
         case invalidUserId
+        case emailTaken
+        case nameTaken
         case server
         case client
         case other
@@ -24,8 +27,8 @@ struct DeleteUserGoRestApiRequest: HTTPRequest {
         }
     }
     
-    var url: URL!
-    var method: HTTPMethod! = .delete
+    var url: URL
+    var method: HTTPMethod = .patch
     var body: Data?
     var headers: [String : String] = [
         "Accept": "application/json",
@@ -33,16 +36,21 @@ struct DeleteUserGoRestApiRequest: HTTPRequest {
         "Authorization": "Bearer \(Config.apiKey)"]
     
     init(_ user: User) {
-        self.url = URL(string: "https://gorest.co.in/public/v1/users/\(String(describing: user.id))")!
+        self.url = GoRestAPIClient.Call.updateUser(user).url
+        self.body = JSONCoder.encode(object: user)
     }
     
     func handleResponse(_ response: HTTPResponse, completion: (ResultType) -> Void) {
         switch response.statusCode! {
-        case 204:
+        case 200:
             completion(.success(()))
             
         case 404:
             completion(.failure(.invalidUserId))
+            
+        case 422:
+            // parsing here...
+            completion(.failure(.emailTaken))
             
         case 400...499:
             completion(.failure(.client))

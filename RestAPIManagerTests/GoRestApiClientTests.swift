@@ -1,5 +1,5 @@
 //
-//  GoRestApiClient.swift
+//  GoRestAPIClient.swift
 //  RestAPIManagerTests
 //
 //  Created by Tomasz Kukułka on 19/01/2022.
@@ -9,26 +9,26 @@ import XCTest
 
 @testable import RestAPIManager
 
-class GoRestAPIClient: XCTestCase {
+class GoRestAPIClientTests: XCTestCase {
     
     private var mock: HTTPClient!
-    private var sut: GoRestApiClient!
+    private var sut: RestAPIClient!
     
     override func setUp() {
         super.setUp()
         
         mock = HTTPClientMock()
-        sut = GoRestApiClientImpl(httpClient: mock)
+        sut = GoRestAPIClient(httpClient: mock)
     }
     
     func test_getUsers() {
         let expectation = expectation(description: "get.users")
         
-        let getUseresRequest = GetUsersGoRestApiRequest()
-        var result: Result<GetUsersGoRestApiRequest.ResultSuccess, GetUsersGoRestApiRequest.ResultFailure>!
+        let getUseresCall = GetUsersGoRestAPICall()
+        var result: GetUsersGoRestAPICall.ResultType!
         var isMainThread: Bool!
         
-        sut.call(request: getUseresRequest) {
+        sut.call(getUseresCall) {
             result = $0
             isMainThread = Thread.current.isMainThread
             expectation.fulfill()
@@ -56,11 +56,11 @@ class GoRestAPIClient: XCTestCase {
         
         let user = User(id: 324, name: "Steve", email: "Jobs", gender: .male, state: .active)
         
-        let addUserRequest = AddUserGoRestApiRequest(user)
-        var result: Result<AddUserGoRestApiRequest.ResultSuccess, AddUserGoRestApiRequest.ResultFailure>!
+        let addUserCall = AddUserGoRestAPICall(user)
+        var result: AddUserGoRestAPICall.ResultType!
         var isMainThread: Bool!
         
-        sut.call(request: addUserRequest) {
+        sut.call(addUserCall) {
             result = $0
             isMainThread = Thread.current.isMainThread
             expectation.fulfill()
@@ -83,11 +83,11 @@ class GoRestAPIClient: XCTestCase {
         
         let user = User(id: 324, name: "Steve", email: "Jobs", gender: .male, state: .inactive)
         
-        let deleteUserRequest = UpdateUserGoRestApiRequest(user)
-        var result: Result<UpdateUserGoRestApiRequest.ResultSuccess, UpdateUserGoRestApiRequest.ResultFailure>!
+        let deleteUserCall = UpdateUserGoRestAPICall(user)
+        var result: UpdateUserGoRestAPICall.ResultType!
         var isMainThread: Bool!
         
-        sut.call(request: deleteUserRequest) {
+        sut.call(deleteUserCall) {
             result = $0
             isMainThread = Thread.current.isMainThread
             expectation.fulfill()
@@ -109,11 +109,11 @@ class GoRestAPIClient: XCTestCase {
         
         let user = User(id: 324, name: "Steve", email: "Jobs", gender: .male, state: .inactive)
         
-        let deleteUserRequest = DeleteUserGoRestApiRequest(user)
-        var result: Result<DeleteUserGoRestApiRequest.ResultSuccess, DeleteUserGoRestApiRequest.ResultFailure>!
+        let deleteUserCall = DeleteUserGoRestAPICall(user)
+        var result: DeleteUserGoRestAPICall.ResultType!
         var isMainThread: Bool!
         
-        sut.call(request: deleteUserRequest) {
+        sut.call(deleteUserCall) {
             result = $0
             isMainThread = Thread.current.isMainThread
             expectation.fulfill()

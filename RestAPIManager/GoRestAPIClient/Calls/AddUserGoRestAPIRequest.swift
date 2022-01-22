@@ -1,5 +1,5 @@
 //
-//  AddUserGoRestApiRequest.swift
+//  AddUserGoRestAPIRequest.swift
 //  RestAPIManager
 //
 //  Created by Tomasz Kukułka on 21/01/2022.
@@ -7,8 +7,9 @@
 
 import Foundation
 
-struct AddUserGoRestApiRequest: HTTPRequest {
+struct AddUserGoRestAPICall: RestAPICall {
     
+    typealias Client = GoRestAPIClient
     typealias ResultSuccess = URL
     typealias ResultFailure = FailureError
     
@@ -25,8 +26,8 @@ struct AddUserGoRestApiRequest: HTTPRequest {
         }
     }
     
-    var url: URL! = URL(string: "https://gorest.co.in/public/v1/users")
-    var method: HTTPMethod! = .post
+    var url: URL
+    var method: HTTPMethod = .post
     var body: Data?
     var headers: [String : String] = [
         "Accept": "application/json",
@@ -35,6 +36,7 @@ struct AddUserGoRestApiRequest: HTTPRequest {
     
     init(_ user: User) {
         self.body = JSONCoder.encode(object: user)
+        self.url = GoRestAPIClient.Call.addUser.url
     }
     
     func handleResponse(_ response: HTTPResponse, completion: (ResultType) -> Void) {
