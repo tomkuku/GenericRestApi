@@ -10,25 +10,13 @@ import Hamcrest
 
 @testable import RestAPIManager
 
-extension Array where Element == URLQueryItem {
-    subscript(name: String) -> String {
-        for queryItem in self {
-            if queryItem.name == name {
-                return queryItem.value!
-            }
-        }
-        
-        return ""
-    }
-}
-
 private final class HTTPClientMock: HTTPClient {
     func request(_ request: HTTPRequest, completion: @escaping (Result<HTTPResponse, HTTPClientError>) -> Void) {
         var response = HTTPResponse()
         let httpComponenets = URLComponents(string: request.url.absoluteString)!
         
-        let lon = httpComponenets.queryItems!["lon"]
-        let lat = httpComponenets.queryItems!["lat"]
+        let lon = httpComponenets.queryItems!["lon"]!
+        let lat = httpComponenets.queryItems!["lat"]!
         
         if lon == "19.9431" && lat == "50.0483" {
             response.body = Data(jsonFileName: "OpenWeatherMapGetAirPollutionTestData")
