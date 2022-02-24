@@ -12,7 +12,7 @@ import XCTest
 class GoRestAPIClientTests: XCTestCase {
     
     private var mock: HTTPClient!
-    private var sut: RestAPIClient!
+    private var sut: GoRestAPIClient!
     
     override func setUp() {
         super.setUp()
