@@ -9,7 +9,9 @@ import Foundation
 
 final class GoRestAPIClient: RestAPIClient {
     
-    enum Call {
+    typealias Endpoint = CallEndpoint
+    
+    enum CallEndpoint: HTTPEndpint {
         case getUsers
         case addUser
         case updateUser(User)
@@ -30,31 +32,25 @@ final class GoRestAPIClient: RestAPIClient {
             
             return urlComponents.url!
         }
+        
+        var headers: [String: String] {
+            var headersElements: [String: String] = [
+                "Accept": "application/json",
+                "Content-Type": "application/json"]
+            
+            switch self {
+            case .getUsers:
+                headersElements["Authorization"] = "Bearer \(Config.goRestAPIKey)"
+                
+            default: break
+            }
+            return headersElements
+        }
     }
     
-    private let httpClient: HTTPClient
+    var httpClient: HTTPClient
     
     init(httpClient: HTTPClient = HTTPClientImpl()) {
         self.httpClient = httpClient
-    }
-    
-    func call<C: RestAPICall>(_ call: C, completion: @escaping (C.ResultType) -> Void) {
-        DispatchQueue.global().async {
-            let httpRequest = HTTPRequest(method: call.method,
-                                          url: call.url,
-                                          headers: call.headers,
-                                          body: call.body)
-            
-            self.httpClient.request(httpRequest) { result in
-                switch result {
-                case .success(let response):
-                    call.handleResponse(response, completion: completion)
-                    
-                case .failure(let httpClientError):
-                    completion(.failure(.init(httpClient: httpClientError)))
-                    
-                }
-            }
-        }
     }
 }

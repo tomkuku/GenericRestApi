@@ -7,21 +7,46 @@
 
 import Foundation
 
-protocol ResultFailureError: Error {
-    init(httpClient: HTTPClientError)
+enum HTTPError: Error {
+    case information
+    case success
+    case redirecton
+    case server
+    case client
+    case unknown
+
+    init(statusCode: Int) {
+        switch statusCode {
+        case 100...199:
+            self = .information
+        case 200...299:
+            self = .success
+        case 300...399:
+            self = .redirecton
+        case 400...499:
+            self = .client
+        case 500...599:
+            self = .server
+        default:
+            self = .unknown
+        }
+    }
+}
+
+protocol RestAPICallFailureResultError: Error {
+    static func unhandled(_ httpError: HTTPError) -> Self
 }
 
 protocol RestAPICall {
+    associatedtype SuccessResult
+    associatedtype FailureResult: RestAPICallFailureResultError
     associatedtype Client: RestAPIClient
-    associatedtype ResultSuccess
-    associatedtype ResultFailure: ResultFailureError
     
-    typealias ResultType = Result<ResultSuccess, ResultFailure>
+    typealias ResultType = Result<SuccessResult, FailureResult>
     
-    var url: URL { get }
-    var method: HTTPMethod { get }
-    var headers: [String: String] { get }
-    var body: Data? { get }
+    var httpRequest: HTTPRequest { get }
+    var endpoint: Client.Endpoint { get }
     
     func handleResponse(_ response: HTTPResponse, completion: (ResultType) -> Void)
 }
+

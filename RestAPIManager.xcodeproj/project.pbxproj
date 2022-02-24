@@ -20,18 +20,18 @@
 		72B4CF0527980EC1007AB50B /* JSONCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4CF0427980EC1007AB50B /* JSONCoder.swift */; };
 		72B9E2C327983DFA00B703B7 /* UsersTestFile.json in Resources */ = {isa = PBXBuildFile; fileRef = 72B9E2C12798369900B703B7 /* UsersTestFile.json */; };
 		72B9E2C42798489200B703B7 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BDB3512790ABA200F68B4C /* Config.swift */; };
-		72BD334F279A475900068760 /* GetUsersGoRestAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BD334E279A475900068760 /* GetUsersGoRestAPIRequest.swift */; };
 		72BD3351279AC99400068760 /* RestAPICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BD3350279AC99400068760 /* RestAPICall.swift */; };
-		72BD3354279B0AEE00068760 /* AddUserGoRestAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BD3353279B0AEE00068760 /* AddUserGoRestAPIRequest.swift */; };
-		72BD3356279B136E00068760 /* DeleteUserGoRestAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BD3355279B136E00068760 /* DeleteUserGoRestAPIRequest.swift */; };
-		72BD3358279B159A00068760 /* UpdateUserGoRestAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BD3357279B159A00068760 /* UpdateUserGoRestAPIRequest.swift */; };
 		72BD335A279B785500068760 /* RestAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BD3359279B785500068760 /* RestAPIClient.swift */; };
 		72BDB3472790A9F300F68B4C /* Config-Debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72BDB3462790A9F300F68B4C /* Config-Debug.plist */; };
 		72BDB34C2790AA1700F68B4C /* Config-Release.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72BDB34B2790AA1700F68B4C /* Config-Release.plist */; };
 		72BDB3522790ABA200F68B4C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BDB3512790ABA200F68B4C /* Config.swift */; };
 		72D5FC972798279600328CF9 /* GoRestApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D5FC962798279600328CF9 /* GoRestApiClientTests.swift */; };
 		72D5FC992798291B00328CF9 /* HTTPClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D5FC982798291B00328CF9 /* HTTPClientMock.swift */; };
-		72F60D152797472500952737 /* GoRestAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F60D142797472500952737 /* GoRestAPIClient.swift */; };
+		8745B0F627C775C800638C8F /* DeleteUserGoRestAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8745B0F227C775C800638C8F /* DeleteUserGoRestAPIRequest.swift */; };
+		8745B0F727C775C800638C8F /* AddUserGoRestAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8745B0F327C775C800638C8F /* AddUserGoRestAPIRequest.swift */; };
+		8745B0F827C775C800638C8F /* UpdateUserGoRestAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8745B0F427C775C800638C8F /* UpdateUserGoRestAPIRequest.swift */; };
+		8745B0F927C775C800638C8F /* GetUsersGoRestAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8745B0F527C775C800638C8F /* GetUsersGoRestAPIRequest.swift */; };
+		8745B0FB27C775CF00638C8F /* GoRestAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8745B0FA27C775CF00638C8F /* GoRestAPIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,11 +59,7 @@
 		72B4CF0227976EF2007AB50B /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		72B4CF0427980EC1007AB50B /* JSONCoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONCoder.swift; sourceTree = "<group>"; };
 		72B9E2C12798369900B703B7 /* UsersTestFile.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = UsersTestFile.json; sourceTree = "<group>"; };
-		72BD334E279A475900068760 /* GetUsersGoRestAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUsersGoRestAPIRequest.swift; sourceTree = "<group>"; };
 		72BD3350279AC99400068760 /* RestAPICall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAPICall.swift; sourceTree = "<group>"; };
-		72BD3353279B0AEE00068760 /* AddUserGoRestAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserGoRestAPIRequest.swift; sourceTree = "<group>"; };
-		72BD3355279B136E00068760 /* DeleteUserGoRestAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUserGoRestAPIRequest.swift; sourceTree = "<group>"; };
-		72BD3357279B159A00068760 /* UpdateUserGoRestAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserGoRestAPIRequest.swift; sourceTree = "<group>"; };
 		72BD3359279B785500068760 /* RestAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAPIClient.swift; sourceTree = "<group>"; };
 		72BDB33B27909E2000F68B4C /* build_config.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build_config.sh; sourceTree = "<group>"; };
 		72BDB3462790A9F300F68B4C /* Config-Debug.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Config-Debug.plist"; sourceTree = "<group>"; };
@@ -71,7 +67,14 @@
 		72BDB3512790ABA200F68B4C /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		72D5FC962798279600328CF9 /* GoRestApiClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoRestApiClientTests.swift; sourceTree = "<group>"; };
 		72D5FC982798291B00328CF9 /* HTTPClientMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientMock.swift; sourceTree = "<group>"; };
-		72F60D142797472500952737 /* GoRestAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoRestAPIClient.swift; sourceTree = "<group>"; };
+		8745B0EB27C774FD00638C8F /* GetCurrentWeatherOpenWeatherMapCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentWeatherOpenWeatherMapCall.swift; sourceTree = "<group>"; };
+		8745B0EC27C774FD00638C8F /* GetCurrentAirPollutionOpenWeatherMapAPICall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentAirPollutionOpenWeatherMapAPICall.swift; sourceTree = "<group>"; };
+		8745B0ED27C774FD00638C8F /* OpenWeatherMapAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherMapAPIClient.swift; sourceTree = "<group>"; };
+		8745B0F227C775C800638C8F /* DeleteUserGoRestAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteUserGoRestAPIRequest.swift; sourceTree = "<group>"; };
+		8745B0F327C775C800638C8F /* AddUserGoRestAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddUserGoRestAPIRequest.swift; sourceTree = "<group>"; };
+		8745B0F427C775C800638C8F /* UpdateUserGoRestAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateUserGoRestAPIRequest.swift; sourceTree = "<group>"; };
+		8745B0F527C775C800638C8F /* GetUsersGoRestAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUsersGoRestAPIRequest.swift; sourceTree = "<group>"; };
+		8745B0FA27C775CF00638C8F /* GoRestAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoRestAPIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +122,8 @@
 				7201857827906F130021B813 /* SceneDelegate.swift */,
 				7201857A27906F130021B813 /* ViewController.swift */,
 				72BD335B279B786A00068760 /* RestAPI */,
-				72BD3352279B0A4000068760 /* GoRestAPIClient */,
+				8745B0E927C774FD00638C8F /* OpenWeatherMapAPIClient */,
+				8745B0F027C775B300638C8F /* GoRestAPIClient */,
 				72B4CF0427980EC1007AB50B /* JSONCoder.swift */,
 				72B4CF0227976EF2007AB50B /* HTTPClient.swift */,
 				72BD335D279B848A00068760 /* Model */,
@@ -142,15 +146,6 @@
 			path = RestAPIManagerTests;
 			sourceTree = "<group>";
 		};
-		72BD3352279B0A4000068760 /* GoRestAPIClient */ = {
-			isa = PBXGroup;
-			children = (
-				72F60D142797472500952737 /* GoRestAPIClient.swift */,
-				72BD335C279B795E00068760 /* Calls */,
-			);
-			path = GoRestAPIClient;
-			sourceTree = "<group>";
-		};
 		72BD335B279B786A00068760 /* RestAPI */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,17 +153,6 @@
 				72BD3350279AC99400068760 /* RestAPICall.swift */,
 			);
 			path = RestAPI;
-			sourceTree = "<group>";
-		};
-		72BD335C279B795E00068760 /* Calls */ = {
-			isa = PBXGroup;
-			children = (
-				72BD334E279A475900068760 /* GetUsersGoRestAPIRequest.swift */,
-				72BD3353279B0AEE00068760 /* AddUserGoRestAPIRequest.swift */,
-				72BD3357279B159A00068760 /* UpdateUserGoRestAPIRequest.swift */,
-				72BD3355279B136E00068760 /* DeleteUserGoRestAPIRequest.swift */,
-			);
-			path = Calls;
 			sourceTree = "<group>";
 		};
 		72BD335D279B848A00068760 /* Model */ = {
@@ -187,6 +171,44 @@
 				72BDB3512790ABA200F68B4C /* Config.swift */,
 			);
 			path = Configurations;
+			sourceTree = "<group>";
+		};
+		8745B0E927C774FD00638C8F /* OpenWeatherMapAPIClient */ = {
+			isa = PBXGroup;
+			children = (
+				8745B0EA27C774FD00638C8F /* Calls */,
+				8745B0ED27C774FD00638C8F /* OpenWeatherMapAPIClient.swift */,
+			);
+			path = OpenWeatherMapAPIClient;
+			sourceTree = "<group>";
+		};
+		8745B0EA27C774FD00638C8F /* Calls */ = {
+			isa = PBXGroup;
+			children = (
+				8745B0EB27C774FD00638C8F /* GetCurrentWeatherOpenWeatherMapCall.swift */,
+				8745B0EC27C774FD00638C8F /* GetCurrentAirPollutionOpenWeatherMapAPICall.swift */,
+			);
+			path = Calls;
+			sourceTree = "<group>";
+		};
+		8745B0F027C775B300638C8F /* GoRestAPIClient */ = {
+			isa = PBXGroup;
+			children = (
+				8745B0FA27C775CF00638C8F /* GoRestAPIClient.swift */,
+				8745B0F127C775B900638C8F /* Calls */,
+			);
+			path = GoRestAPIClient;
+			sourceTree = "<group>";
+		};
+		8745B0F127C775B900638C8F /* Calls */ = {
+			isa = PBXGroup;
+			children = (
+				8745B0F327C775C800638C8F /* AddUserGoRestAPIRequest.swift */,
+				8745B0F227C775C800638C8F /* DeleteUserGoRestAPIRequest.swift */,
+				8745B0F527C775C800638C8F /* GetUsersGoRestAPIRequest.swift */,
+				8745B0F427C775C800638C8F /* UpdateUserGoRestAPIRequest.swift */,
+			);
+			path = Calls;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,20 +337,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72BD3358279B159A00068760 /* UpdateUserGoRestAPIRequest.swift in Sources */,
-				72BD3356279B136E00068760 /* DeleteUserGoRestAPIRequest.swift in Sources */,
+				8745B0F627C775C800638C8F /* DeleteUserGoRestAPIRequest.swift in Sources */,
+				8745B0F727C775C800638C8F /* AddUserGoRestAPIRequest.swift in Sources */,
 				7201857B27906F130021B813 /* ViewController.swift in Sources */,
 				72B4CF0527980EC1007AB50B /* JSONCoder.swift in Sources */,
-				72F60D152797472500952737 /* GoRestAPIClient.swift in Sources */,
+				8745B0F927C775C800638C8F /* GetUsersGoRestAPIRequest.swift in Sources */,
+				8745B0F827C775C800638C8F /* UpdateUserGoRestAPIRequest.swift in Sources */,
 				72B4CF01279768C7007AB50B /* User.swift in Sources */,
 				72B4CF0327976EF2007AB50B /* HTTPClient.swift in Sources */,
 				72BD335A279B785500068760 /* RestAPIClient.swift in Sources */,
 				72BD3351279AC99400068760 /* RestAPICall.swift in Sources */,
 				72BDB3522790ABA200F68B4C /* Config.swift in Sources */,
 				7201857727906F130021B813 /* AppDelegate.swift in Sources */,
-				72BD334F279A475900068760 /* GetUsersGoRestAPIRequest.swift in Sources */,
 				7201857927906F130021B813 /* SceneDelegate.swift in Sources */,
-				72BD3354279B0AEE00068760 /* AddUserGoRestAPIRequest.swift in Sources */,
+				8745B0FB27C775CF00638C8F /* GoRestAPIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

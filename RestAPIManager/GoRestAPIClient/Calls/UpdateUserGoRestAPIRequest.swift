@@ -9,35 +9,26 @@ import Foundation
 
 struct UpdateUserGoRestAPICall: RestAPICall {
     
+    typealias SuccessResult = Void
+    typealias FailureResult = FailureError
     typealias Client = GoRestAPIClient
-    typealias ResultSuccess = Void
-    typealias ResultFailure = FailureError
     
-    enum FailureError: ResultFailureError {
-        case invalidUserId
-        case emailTaken
+    enum FailureError: RestAPICallFailureResultError {
         case nameTaken
-        case server
-        case client
-        case other
-        case httpClient(HTTPClientError)
-        
-        init(httpClient: HTTPClientError) {
-            self = .httpClient(httpClient)
-        }
+        case emailTaken
+        case invalidUserId
+        case unhandled(HTTPError)
     }
     
-    var url: URL
-    var method: HTTPMethod = .patch
-    var body: Data?
-    var headers: [String : String] = [
-        "Accept": "application/json",
-        "Content-Type": "application/json",
-        "Authorization": "Bearer \(Config.apiKey)"]
+    var httpRequest: HTTPRequest
+    var endpoint: GoRestAPIClient.CallEndpoint
     
     init(_ user: User) {
-        self.url = GoRestAPIClient.Call.updateUser(user).url
-        self.body = JSONCoder.encode(object: user)
+        endpoint = .updateUser(user)
+        httpRequest = .init(method: .patch,
+                            url: endpoint.url,
+                            headers: endpoint.headers,
+                            body: nil)
     }
     
     func handleResponse(_ response: HTTPResponse, completion: (ResultType) -> Void) {
@@ -52,13 +43,8 @@ struct UpdateUserGoRestAPICall: RestAPICall {
             // parsing here...
             completion(.failure(.emailTaken))
             
-        case 400...499:
-            completion(.failure(.client))
-            
-        case 500...599:
-            completion(.failure(.server))
-            
-        default: break
+        default:
+            completion(.failure(.unhandled(.init(statusCode: response.statusCode))))
         }
     }
 }

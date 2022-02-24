@@ -9,34 +9,25 @@ import Foundation
 
 struct AddUserGoRestAPICall: RestAPICall {
     
+    typealias SuccessResult = URL
+    typealias FailureResult = FailureError
     typealias Client = GoRestAPIClient
-    typealias ResultSuccess = URL
-    typealias ResultFailure = FailureError
     
-    enum FailureError: ResultFailureError {
+    enum FailureError: RestAPICallFailureResultError {
         case nameTaken
         case emailTaken
-        case server
-        case client
-        case other
-        case httpClient(HTTPClientError)
-        
-        init(httpClient: HTTPClientError) {
-            self = .httpClient(httpClient)
-        }
+        case noLocation
+        case unhandled(HTTPError)
     }
     
-    var url: URL
-    var method: HTTPMethod = .post
-    var body: Data?
-    var headers: [String : String] = [
-        "Accept": "application/json",
-        "Content-Type": "application/json",
-        "Authorization": "Bearer \(Config.apiKey)"]
+    var httpRequest: HTTPRequest
+    var endpoint: GoRestAPIClient.CallEndpoint = .addUser
     
     init(_ user: User) {
-        self.body = JSONCoder.encode(object: user)
-        self.url = GoRestAPIClient.Call.addUser.url
+        httpRequest = .init(method: .post,
+                            url: endpoint.url,
+                            headers: endpoint.headers,
+                            body: JSONCoder.encode(object: user))
     }
     
     func handleResponse(_ response: HTTPResponse, completion: (ResultType) -> Void) {
@@ -45,16 +36,10 @@ struct AddUserGoRestAPICall: RestAPICall {
             if let location = response.headers["Location"] as? String {
                 completion(.success(URL(string: location)!))
             } else {
-                completion(.failure(.other))
+                completion(.failure(.noLocation))
             }
-            
-        case 400...499:
-            completion(.failure(.client))
-            
-        case 500...599:
-            completion(.failure(.server))
-            
-        default: break
+        default:
+            completion(.failure(.unhandled(.init(statusCode: response.statusCode))))
         }
     }
 }
