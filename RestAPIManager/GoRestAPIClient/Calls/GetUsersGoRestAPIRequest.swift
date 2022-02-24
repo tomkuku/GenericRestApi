@@ -23,9 +23,9 @@ struct GetUsersGoRestAPICall: RestAPICall {
     
     init() {
         httpRequest = HTTPRequest(method: .get,
-                                      url: endpoint.url,
-                                      headers: endpoint.headers,
-                                      body: nil)
+                                  url: endpoint.url,
+                                  headers: endpoint.headers,
+                                  body: nil)
     }
     
     func handleResponse(_ response: HTTPResponse, completion: (ResultType) -> Void) {

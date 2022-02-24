@@ -8,7 +8,7 @@
 import Foundation
 
 struct GetCurrentAirPollutionOpenWeatherMapAPICall: RestAPICall {
-        
+    
     typealias SuccessResult = AirPollution
     typealias FailureResult = FailureError
     typealias Client = OpenWeatherMapRestAPIClient
@@ -36,8 +36,8 @@ struct GetCurrentAirPollutionOpenWeatherMapAPICall: RestAPICall {
         switch response.statusCode {
         case 200:
             if let data = response.body,
-               let airPollutions: [AirPollution] = JSONCoder.decode(from: data, path: "list"),
-               let firstAirPollution = airPollutions.first {
+                let airPollutions: [AirPollution] = JSONCoder.decode(from: data, path: "list"),
+                let firstAirPollution = airPollutions.first {
                 completion(.success(firstAirPollution))
                 
             } else {

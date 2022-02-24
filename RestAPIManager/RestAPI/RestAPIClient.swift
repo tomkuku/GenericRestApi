@@ -14,7 +14,6 @@ protocol HTTPEndpint {
 
 protocol RestAPIClient {
     associatedtype Endpoint: HTTPEndpint
-    
     var httpClient: HTTPClient { get }
     func call<C: RestAPICall>(_ call: C, completion: @escaping (C.ResultType) -> Void) where C.Client == Self
 }

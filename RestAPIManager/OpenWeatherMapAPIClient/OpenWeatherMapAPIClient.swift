@@ -20,7 +20,6 @@ final class OpenWeatherMapRestAPIClient: RestAPIClient {
             urlComponents.scheme = "https"
             urlComponents.host = "api.openweathermap.org"
             
-                    
             switch self {
             case .getCurrentWeather(let cityId):
                 urlComponents.path = "/data/2.5/weather"

@@ -32,6 +32,8 @@
 		8745B0F827C775C800638C8F /* UpdateUserGoRestAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8745B0F427C775C800638C8F /* UpdateUserGoRestAPIRequest.swift */; };
 		8745B0F927C775C800638C8F /* GetUsersGoRestAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8745B0F527C775C800638C8F /* GetUsersGoRestAPIRequest.swift */; };
 		8745B0FB27C775CF00638C8F /* GoRestAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8745B0FA27C775CF00638C8F /* GoRestAPIClient.swift */; };
+		8745B0FE27C77F0D00638C8F /* AirPollution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8745B0FC27C77F0D00638C8F /* AirPollution.swift */; };
+		8745B0FF27C77F0D00638C8F /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8745B0FD27C77F0D00638C8F /* Weather.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		8745B0F427C775C800638C8F /* UpdateUserGoRestAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateUserGoRestAPIRequest.swift; sourceTree = "<group>"; };
 		8745B0F527C775C800638C8F /* GetUsersGoRestAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUsersGoRestAPIRequest.swift; sourceTree = "<group>"; };
 		8745B0FA27C775CF00638C8F /* GoRestAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoRestAPIClient.swift; sourceTree = "<group>"; };
+		8745B0FC27C77F0D00638C8F /* AirPollution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirPollution.swift; sourceTree = "<group>"; };
+		8745B0FD27C77F0D00638C8F /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +162,8 @@
 		72BD335D279B848A00068760 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8745B0FC27C77F0D00638C8F /* AirPollution.swift */,
+				8745B0FD27C77F0D00638C8F /* Weather.swift */,
 				72B4CF00279768C7007AB50B /* User.swift */,
 			);
 			path = Model;
@@ -176,8 +182,8 @@
 		8745B0E927C774FD00638C8F /* OpenWeatherMapAPIClient */ = {
 			isa = PBXGroup;
 			children = (
-				8745B0EA27C774FD00638C8F /* Calls */,
 				8745B0ED27C774FD00638C8F /* OpenWeatherMapAPIClient.swift */,
+				8745B0EA27C774FD00638C8F /* Calls */,
 			);
 			path = OpenWeatherMapAPIClient;
 			sourceTree = "<group>";
@@ -342,8 +348,10 @@
 				7201857B27906F130021B813 /* ViewController.swift in Sources */,
 				72B4CF0527980EC1007AB50B /* JSONCoder.swift in Sources */,
 				8745B0F927C775C800638C8F /* GetUsersGoRestAPIRequest.swift in Sources */,
+				8745B0FE27C77F0D00638C8F /* AirPollution.swift in Sources */,
 				8745B0F827C775C800638C8F /* UpdateUserGoRestAPIRequest.swift in Sources */,
 				72B4CF01279768C7007AB50B /* User.swift in Sources */,
+				8745B0FF27C77F0D00638C8F /* Weather.swift in Sources */,
 				72B4CF0327976EF2007AB50B /* HTTPClient.swift in Sources */,
 				72BD335A279B785500068760 /* RestAPIClient.swift in Sources */,
 				72BD3351279AC99400068760 /* RestAPICall.swift in Sources */,
