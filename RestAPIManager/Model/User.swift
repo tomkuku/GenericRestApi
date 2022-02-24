@@ -26,7 +26,6 @@ struct User: Decodable, Encodable {
     var state: State?
 }
 
-
 extension User {
     
     private enum CodingKeys: String, CodingKey {
