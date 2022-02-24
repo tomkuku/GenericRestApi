@@ -40,7 +40,6 @@ enum HTTPError: Error {
     }
 }
 
-
 enum HTTPClientError: Error {
     case `internal`
     case noInternatConnection

@@ -19,7 +19,7 @@ struct AirPollution {
     let nh3: Float?
 }
 
-extension AirPollution: Decodable {
+extension AirPollution: Decodable, Equatable {
     private enum CodingKeys: String, CodingKey {
         case main
         case aqi

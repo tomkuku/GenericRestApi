@@ -40,8 +40,11 @@
 		8745B0FF27C77F0D00638C8F /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8745B0FD27C77F0D00638C8F /* Weather.swift */; };
 		875452AB27C79A780092056C /* OpenWeatherMapAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8745B0ED27C774FD00638C8F /* OpenWeatherMapAPIClient.swift */; };
 		875452AC27C79A7C0092056C /* GetCurrentWeatherOpenWeatherMapCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8745B0EB27C774FD00638C8F /* GetCurrentWeatherOpenWeatherMapCall.swift */; };
-		875452AD27C79A7C0092056C /* GetCurrentAirPollutionOpenWeatherMapAPICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8745B0EC27C774FD00638C8F /* GetCurrentAirPollutionOpenWeatherMapAPICall.swift */; };
+		875452AD27C79A7C0092056C /* GetAirPollutionOpenWeatherMapAPICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8745B0EC27C774FD00638C8F /* GetAirPollutionOpenWeatherMapAPICall.swift */; };
 		875452AE27C79F520092056C /* OpenWeatherMapCurrentWeatherTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = 8716DA4527C797C70097EC8B /* OpenWeatherMapCurrentWeatherTestData.json */; };
+		875452B527C7B3130092056C /* OpenWeatherMapGetAirPollutionTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = 875452B427C7B3130092056C /* OpenWeatherMapGetAirPollutionTestData.json */; };
+		875452B727C7B3420092056C /* GetAirPollutionOpenWeatherMapCallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875452B627C7B3420092056C /* GetAirPollutionOpenWeatherMapCallTests.swift */; };
+		875452B827C7B3450092056C /* OpenWeatherMapGetAirPollutionTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = 875452B427C7B3130092056C /* OpenWeatherMapGetAirPollutionTestData.json */; };
 		9CFC92E5BADAC4A93DA9B22B /* Pods_RestAPIManager_RestAPIManagerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2B2E42C4388D2319ECE697 /* Pods_RestAPIManager_RestAPIManagerTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,7 +89,7 @@
 		8716DA4527C797C70097EC8B /* OpenWeatherMapCurrentWeatherTestData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = OpenWeatherMapCurrentWeatherTestData.json; sourceTree = "<group>"; };
 		8716DA4727C7985E0097EC8B /* Data+jsonFileName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+jsonFileName.swift"; sourceTree = "<group>"; };
 		8745B0EB27C774FD00638C8F /* GetCurrentWeatherOpenWeatherMapCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentWeatherOpenWeatherMapCall.swift; sourceTree = "<group>"; };
-		8745B0EC27C774FD00638C8F /* GetCurrentAirPollutionOpenWeatherMapAPICall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentAirPollutionOpenWeatherMapAPICall.swift; sourceTree = "<group>"; };
+		8745B0EC27C774FD00638C8F /* GetAirPollutionOpenWeatherMapAPICall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAirPollutionOpenWeatherMapAPICall.swift; sourceTree = "<group>"; };
 		8745B0ED27C774FD00638C8F /* OpenWeatherMapAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherMapAPIClient.swift; sourceTree = "<group>"; };
 		8745B0F227C775C800638C8F /* DeleteUserGoRestAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteUserGoRestAPIRequest.swift; sourceTree = "<group>"; };
 		8745B0F327C775C800638C8F /* AddUserGoRestAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddUserGoRestAPIRequest.swift; sourceTree = "<group>"; };
@@ -95,6 +98,8 @@
 		8745B0FA27C775CF00638C8F /* GoRestAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoRestAPIClient.swift; sourceTree = "<group>"; };
 		8745B0FC27C77F0D00638C8F /* AirPollution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirPollution.swift; sourceTree = "<group>"; };
 		8745B0FD27C77F0D00638C8F /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		875452B427C7B3130092056C /* OpenWeatherMapGetAirPollutionTestData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = OpenWeatherMapGetAirPollutionTestData.json; sourceTree = "<group>"; };
+		875452B627C7B3420092056C /* GetAirPollutionOpenWeatherMapCallTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAirPollutionOpenWeatherMapCallTests.swift; sourceTree = "<group>"; };
 		8760582C70BA90B56430E399 /* Pods-RestAPIManager-RestAPIManagerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestAPIManager-RestAPIManagerTests.release.xcconfig"; path = "Target Support Files/Pods-RestAPIManager-RestAPIManagerTests/Pods-RestAPIManager-RestAPIManagerTests.release.xcconfig"; sourceTree = "<group>"; };
 		F55023407F2C7A9C4218A0DB /* Pods-RestAPIManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestAPIManager.release.xcconfig"; path = "Target Support Files/Pods-RestAPIManager/Pods-RestAPIManager.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -225,7 +230,9 @@
 			isa = PBXGroup;
 			children = (
 				8716DA4227C7930F0097EC8B /* GetCurrentWeatherOpenWeatherMapCallTests.swift */,
+				875452B627C7B3420092056C /* GetAirPollutionOpenWeatherMapCallTests.swift */,
 				8716DA4527C797C70097EC8B /* OpenWeatherMapCurrentWeatherTestData.json */,
+				875452B427C7B3130092056C /* OpenWeatherMapGetAirPollutionTestData.json */,
 			);
 			path = OpenWeatherMapAPIClientTests;
 			sourceTree = "<group>";
@@ -251,7 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				8745B0EB27C774FD00638C8F /* GetCurrentWeatherOpenWeatherMapCall.swift */,
-				8745B0EC27C774FD00638C8F /* GetCurrentAirPollutionOpenWeatherMapAPICall.swift */,
+				8745B0EC27C774FD00638C8F /* GetAirPollutionOpenWeatherMapAPICall.swift */,
 			);
 			path = Calls;
 			sourceTree = "<group>";
@@ -377,6 +384,7 @@
 				72B9E2C327983DFA00B703B7 /* UsersTestFile.json in Resources */,
 				72BDB34C2790AA1700F68B4C /* Config-Release.plist in Resources */,
 				72BDB3472790A9F300F68B4C /* Config-Debug.plist in Resources */,
+				875452B827C7B3450092056C /* OpenWeatherMapGetAirPollutionTestData.json in Resources */,
 				7201857E27906F130021B813 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,6 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8716DA4627C797C70097EC8B /* OpenWeatherMapCurrentWeatherTestData.json in Resources */,
+				875452B527C7B3130092056C /* OpenWeatherMapGetAirPollutionTestData.json in Resources */,
 				721C7E49279A33060007815F /* UsersTestFile.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -494,7 +503,7 @@
 				72BDB3522790ABA200F68B4C /* Config.swift in Sources */,
 				7201857727906F130021B813 /* AppDelegate.swift in Sources */,
 				7201857927906F130021B813 /* SceneDelegate.swift in Sources */,
-				875452AD27C79A7C0092056C /* GetCurrentAirPollutionOpenWeatherMapAPICall.swift in Sources */,
+				875452AD27C79A7C0092056C /* GetAirPollutionOpenWeatherMapAPICall.swift in Sources */,
 				875452AB27C79A780092056C /* OpenWeatherMapAPIClient.swift in Sources */,
 				8745B0FB27C775CF00638C8F /* GoRestAPIClient.swift in Sources */,
 			);
@@ -504,6 +513,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				875452B727C7B3420092056C /* GetAirPollutionOpenWeatherMapCallTests.swift in Sources */,
 				7201858E27906F140021B813 /* RestApiManagerTests.swift in Sources */,
 				8716DA4327C7930F0097EC8B /* GetCurrentWeatherOpenWeatherMapCallTests.swift in Sources */,
 				72B9E2C42798489200B703B7 /* Config.swift in Sources */,

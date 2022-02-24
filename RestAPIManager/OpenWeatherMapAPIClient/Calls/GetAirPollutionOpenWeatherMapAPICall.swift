@@ -1,5 +1,5 @@
 //
-//  GetCurrentAirPollutionOpenWeatherMapAPICall.swift
+//  GetAirPollutionOpenWeatherMapAPICall.swift
 //  RestAPIManager
 //
 //  Created by Tomasz Kukułka on 24/01/2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GetCurrentAirPollutionOpenWeatherMapAPICall: RestAPICall {
+struct GetAirPollutionOpenWeatherMapAPICall: RestAPICall {
     
     typealias SuccessResult = AirPollution
     typealias FailureResult = FailureError
@@ -16,8 +16,7 @@ struct GetCurrentAirPollutionOpenWeatherMapAPICall: RestAPICall {
     enum FailureError: RestAPICallFailureResultError {
         case noData
         case noCoordinates
-        case wrongLatitude
-        case wrongLongitude
+        case wrongLocation
         case unhandled(HTTPError)
     }
     
@@ -45,8 +44,7 @@ struct GetCurrentAirPollutionOpenWeatherMapAPICall: RestAPICall {
             }
             
         case 400:
-            // parsing
-            completion(.failure(.wrongLatitude))
+            completion(.failure(.wrongLocation))
             
         default:
             completion(.failure(.unhandled(.init(statusCode: response.statusCode))))
