@@ -2,3 +2,6 @@ Configurations
 RestAPIManager.xcodeproj/xcuserdata
 RestAPIManager.xcodeproj/xcuserdata
 RestAPIManager.xcodeproj/project.xcworkspace
+RestAPIManager.xcworkspace
+Pods
+Podfile.lock

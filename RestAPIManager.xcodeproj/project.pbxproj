@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4050F7E35247320D6F181054 /* Pods_RestAPIManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4030A400830EC1114AD52C7E /* Pods_RestAPIManager.framework */; };
 		7201857727906F130021B813 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7201857627906F130021B813 /* AppDelegate.swift */; };
 		7201857927906F130021B813 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7201857827906F130021B813 /* SceneDelegate.swift */; };
 		7201857B27906F130021B813 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7201857A27906F130021B813 /* ViewController.swift */; };
@@ -27,6 +28,9 @@
 		72BDB3522790ABA200F68B4C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BDB3512790ABA200F68B4C /* Config.swift */; };
 		72D5FC972798279600328CF9 /* GoRestApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D5FC962798279600328CF9 /* GoRestApiClientTests.swift */; };
 		72D5FC992798291B00328CF9 /* HTTPClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D5FC982798291B00328CF9 /* HTTPClientMock.swift */; };
+		8716DA4327C7930F0097EC8B /* GetCurrentWeatherOpenWeatherMapCallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8716DA4227C7930F0097EC8B /* GetCurrentWeatherOpenWeatherMapCallTests.swift */; };
+		8716DA4627C797C70097EC8B /* OpenWeatherMapCurrentWeatherTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = 8716DA4527C797C70097EC8B /* OpenWeatherMapCurrentWeatherTestData.json */; };
+		8716DA4827C7985E0097EC8B /* Data+jsonFileName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8716DA4727C7985E0097EC8B /* Data+jsonFileName.swift */; };
 		8745B0F627C775C800638C8F /* DeleteUserGoRestAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8745B0F227C775C800638C8F /* DeleteUserGoRestAPIRequest.swift */; };
 		8745B0F727C775C800638C8F /* AddUserGoRestAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8745B0F327C775C800638C8F /* AddUserGoRestAPIRequest.swift */; };
 		8745B0F827C775C800638C8F /* UpdateUserGoRestAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8745B0F427C775C800638C8F /* UpdateUserGoRestAPIRequest.swift */; };
@@ -34,6 +38,11 @@
 		8745B0FB27C775CF00638C8F /* GoRestAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8745B0FA27C775CF00638C8F /* GoRestAPIClient.swift */; };
 		8745B0FE27C77F0D00638C8F /* AirPollution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8745B0FC27C77F0D00638C8F /* AirPollution.swift */; };
 		8745B0FF27C77F0D00638C8F /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8745B0FD27C77F0D00638C8F /* Weather.swift */; };
+		875452AB27C79A780092056C /* OpenWeatherMapAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8745B0ED27C774FD00638C8F /* OpenWeatherMapAPIClient.swift */; };
+		875452AC27C79A7C0092056C /* GetCurrentWeatherOpenWeatherMapCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8745B0EB27C774FD00638C8F /* GetCurrentWeatherOpenWeatherMapCall.swift */; };
+		875452AD27C79A7C0092056C /* GetCurrentAirPollutionOpenWeatherMapAPICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8745B0EC27C774FD00638C8F /* GetCurrentAirPollutionOpenWeatherMapAPICall.swift */; };
+		875452AE27C79F520092056C /* OpenWeatherMapCurrentWeatherTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = 8716DA4527C797C70097EC8B /* OpenWeatherMapCurrentWeatherTestData.json */; };
+		9CFC92E5BADAC4A93DA9B22B /* Pods_RestAPIManager_RestAPIManagerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2B2E42C4388D2319ECE697 /* Pods_RestAPIManager_RestAPIManagerTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +56,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0BD021A73EB06EB56CEA6040 /* Pods-RestAPIManager-RestAPIManagerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestAPIManager-RestAPIManagerTests.debug.xcconfig"; path = "Target Support Files/Pods-RestAPIManager-RestAPIManagerTests/Pods-RestAPIManager-RestAPIManagerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4030A400830EC1114AD52C7E /* Pods_RestAPIManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RestAPIManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C2569DA837858EE923E05A3 /* Pods-RestAPIManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestAPIManager.debug.xcconfig"; path = "Target Support Files/Pods-RestAPIManager/Pods-RestAPIManager.debug.xcconfig"; sourceTree = "<group>"; };
+		6C2B2E42C4388D2319ECE697 /* Pods_RestAPIManager_RestAPIManagerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RestAPIManager_RestAPIManagerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7201857327906F130021B813 /* RestAPIManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestAPIManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7201857627906F130021B813 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7201857827906F130021B813 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +82,9 @@
 		72BDB3512790ABA200F68B4C /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		72D5FC962798279600328CF9 /* GoRestApiClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoRestApiClientTests.swift; sourceTree = "<group>"; };
 		72D5FC982798291B00328CF9 /* HTTPClientMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientMock.swift; sourceTree = "<group>"; };
+		8716DA4227C7930F0097EC8B /* GetCurrentWeatherOpenWeatherMapCallTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentWeatherOpenWeatherMapCallTests.swift; sourceTree = "<group>"; };
+		8716DA4527C797C70097EC8B /* OpenWeatherMapCurrentWeatherTestData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = OpenWeatherMapCurrentWeatherTestData.json; sourceTree = "<group>"; };
+		8716DA4727C7985E0097EC8B /* Data+jsonFileName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+jsonFileName.swift"; sourceTree = "<group>"; };
 		8745B0EB27C774FD00638C8F /* GetCurrentWeatherOpenWeatherMapCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentWeatherOpenWeatherMapCall.swift; sourceTree = "<group>"; };
 		8745B0EC27C774FD00638C8F /* GetCurrentAirPollutionOpenWeatherMapAPICall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentAirPollutionOpenWeatherMapAPICall.swift; sourceTree = "<group>"; };
 		8745B0ED27C774FD00638C8F /* OpenWeatherMapAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherMapAPIClient.swift; sourceTree = "<group>"; };
@@ -79,6 +95,8 @@
 		8745B0FA27C775CF00638C8F /* GoRestAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoRestAPIClient.swift; sourceTree = "<group>"; };
 		8745B0FC27C77F0D00638C8F /* AirPollution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirPollution.swift; sourceTree = "<group>"; };
 		8745B0FD27C77F0D00638C8F /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		8760582C70BA90B56430E399 /* Pods-RestAPIManager-RestAPIManagerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestAPIManager-RestAPIManagerTests.release.xcconfig"; path = "Target Support Files/Pods-RestAPIManager-RestAPIManagerTests/Pods-RestAPIManager-RestAPIManagerTests.release.xcconfig"; sourceTree = "<group>"; };
+		F55023407F2C7A9C4218A0DB /* Pods-RestAPIManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestAPIManager.release.xcconfig"; path = "Target Support Files/Pods-RestAPIManager/Pods-RestAPIManager.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4050F7E35247320D6F181054 /* Pods_RestAPIManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,12 +112,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CFC92E5BADAC4A93DA9B22B /* Pods_RestAPIManager_RestAPIManagerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1373EC626564742646105DA6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6C2569DA837858EE923E05A3 /* Pods-RestAPIManager.debug.xcconfig */,
+				F55023407F2C7A9C4218A0DB /* Pods-RestAPIManager.release.xcconfig */,
+				0BD021A73EB06EB56CEA6040 /* Pods-RestAPIManager-RestAPIManagerTests.debug.xcconfig */,
+				8760582C70BA90B56430E399 /* Pods-RestAPIManager-RestAPIManagerTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		1C6351CE4C7AF3E7A3E608BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4030A400830EC1114AD52C7E /* Pods_RestAPIManager.framework */,
+				6C2B2E42C4388D2319ECE697 /* Pods_RestAPIManager_RestAPIManagerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7201856A27906F130021B813 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +147,8 @@
 				7201857527906F130021B813 /* RestAPIManager */,
 				7201858C27906F140021B813 /* RestAPIManagerTests */,
 				7201857427906F130021B813 /* Products */,
+				1373EC626564742646105DA6 /* Pods */,
+				1C6351CE4C7AF3E7A3E608BF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,9 +185,9 @@
 			isa = PBXGroup;
 			children = (
 				7201858D27906F140021B813 /* RestApiManagerTests.swift */,
-				72D5FC962798279600328CF9 /* GoRestApiClientTests.swift */,
-				72D5FC982798291B00328CF9 /* HTTPClientMock.swift */,
-				72B9E2C12798369900B703B7 /* UsersTestFile.json */,
+				8716DA4927C798E30097EC8B /* Extensions */,
+				875452AF27C7AAB20092056C /* GoRestApiClientTests */,
+				8716DA4427C793170097EC8B /* OpenWeatherMapAPIClientTests */,
 			);
 			path = RestAPIManagerTests;
 			sourceTree = "<group>";
@@ -177,6 +219,23 @@
 				72BDB3512790ABA200F68B4C /* Config.swift */,
 			);
 			path = Configurations;
+			sourceTree = "<group>";
+		};
+		8716DA4427C793170097EC8B /* OpenWeatherMapAPIClientTests */ = {
+			isa = PBXGroup;
+			children = (
+				8716DA4227C7930F0097EC8B /* GetCurrentWeatherOpenWeatherMapCallTests.swift */,
+				8716DA4527C797C70097EC8B /* OpenWeatherMapCurrentWeatherTestData.json */,
+			);
+			path = OpenWeatherMapAPIClientTests;
+			sourceTree = "<group>";
+		};
+		8716DA4927C798E30097EC8B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8716DA4727C7985E0097EC8B /* Data+jsonFileName.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		8745B0E927C774FD00638C8F /* OpenWeatherMapAPIClient */ = {
@@ -217,6 +276,16 @@
 			path = Calls;
 			sourceTree = "<group>";
 		};
+		875452AF27C7AAB20092056C /* GoRestApiClientTests */ = {
+			isa = PBXGroup;
+			children = (
+				72D5FC982798291B00328CF9 /* HTTPClientMock.swift */,
+				72D5FC962798279600328CF9 /* GoRestApiClientTests.swift */,
+				72B9E2C12798369900B703B7 /* UsersTestFile.json */,
+			);
+			path = GoRestApiClientTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -224,6 +293,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7201859D27906F140021B813 /* Build configuration list for PBXNativeTarget "RestAPIManager" */;
 			buildPhases = (
+				6ECF5D48BBBEE210E2A45C91 /* [CP] Check Pods Manifest.lock */,
 				7201856F27906F130021B813 /* Sources */,
 				7201857027906F130021B813 /* Frameworks */,
 				7201857127906F130021B813 /* Resources */,
@@ -242,9 +312,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 720185A027906F140021B813 /* Build configuration list for PBXNativeTarget "RestAPIManagerTests" */;
 			buildPhases = (
+				CB2449C7DD09249E448B1330 /* [CP] Check Pods Manifest.lock */,
 				7201858527906F140021B813 /* Sources */,
 				7201858627906F140021B813 /* Frameworks */,
 				7201858727906F140021B813 /* Resources */,
+				9FE962ADF6CCEBA30C15434E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -299,6 +371,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				875452AE27C79F520092056C /* OpenWeatherMapCurrentWeatherTestData.json in Resources */,
 				7201858327906F140021B813 /* LaunchScreen.storyboard in Resources */,
 				7201858027906F140021B813 /* Assets.xcassets in Resources */,
 				72B9E2C327983DFA00B703B7 /* UsersTestFile.json in Resources */,
@@ -312,6 +385,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8716DA4627C797C70097EC8B /* OpenWeatherMapCurrentWeatherTestData.json in Resources */,
 				721C7E49279A33060007815F /* UsersTestFile.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,6 +393,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		6ECF5D48BBBEE210E2A45C91 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RestAPIManager-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		72BDB33C27909E5C00F68B4C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -336,6 +432,45 @@
 			shellPath = /bin/sh;
 			shellScript = "source build_config.sh\n";
 		};
+		9FE962ADF6CCEBA30C15434E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RestAPIManager-RestAPIManagerTests/Pods-RestAPIManager-RestAPIManagerTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RestAPIManager-RestAPIManagerTests/Pods-RestAPIManager-RestAPIManagerTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RestAPIManager-RestAPIManagerTests/Pods-RestAPIManager-RestAPIManagerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB2449C7DD09249E448B1330 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RestAPIManager-RestAPIManagerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -344,6 +479,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8745B0F627C775C800638C8F /* DeleteUserGoRestAPIRequest.swift in Sources */,
+				875452AC27C79A7C0092056C /* GetCurrentWeatherOpenWeatherMapCall.swift in Sources */,
 				8745B0F727C775C800638C8F /* AddUserGoRestAPIRequest.swift in Sources */,
 				7201857B27906F130021B813 /* ViewController.swift in Sources */,
 				72B4CF0527980EC1007AB50B /* JSONCoder.swift in Sources */,
@@ -358,6 +494,8 @@
 				72BDB3522790ABA200F68B4C /* Config.swift in Sources */,
 				7201857727906F130021B813 /* AppDelegate.swift in Sources */,
 				7201857927906F130021B813 /* SceneDelegate.swift in Sources */,
+				875452AD27C79A7C0092056C /* GetCurrentAirPollutionOpenWeatherMapAPICall.swift in Sources */,
+				875452AB27C79A780092056C /* OpenWeatherMapAPIClient.swift in Sources */,
 				8745B0FB27C775CF00638C8F /* GoRestAPIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,7 +505,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7201858E27906F140021B813 /* RestApiManagerTests.swift in Sources */,
+				8716DA4327C7930F0097EC8B /* GetCurrentWeatherOpenWeatherMapCallTests.swift in Sources */,
 				72B9E2C42798489200B703B7 /* Config.swift in Sources */,
+				8716DA4827C7985E0097EC8B /* Data+jsonFileName.swift in Sources */,
 				72D5FC972798279600328CF9 /* GoRestApiClientTests.swift in Sources */,
 				72D5FC992798291B00328CF9 /* HTTPClientMock.swift in Sources */,
 			);
@@ -521,6 +661,7 @@
 		};
 		7201859E27906F140021B813 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C2569DA837858EE923E05A3 /* Pods-RestAPIManager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -548,6 +689,7 @@
 		};
 		7201859F27906F140021B813 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F55023407F2C7A9C4218A0DB /* Pods-RestAPIManager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -575,6 +717,7 @@
 		};
 		720185A127906F140021B813 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BD021A73EB06EB56CEA6040 /* Pods-RestAPIManager-RestAPIManagerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -594,6 +737,7 @@
 		};
 		720185A227906F140021B813 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8760582C70BA90B56430E399 /* Pods-RestAPIManager-RestAPIManagerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
