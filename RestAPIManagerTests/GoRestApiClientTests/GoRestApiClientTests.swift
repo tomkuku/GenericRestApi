@@ -17,7 +17,7 @@ class GoRestAPIClientTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        mock = HTTPClientMock()
+        mock = GoRestApiHTTPClientMock()
         sut = GoRestAPIClient(httpClient: mock)
     }
     

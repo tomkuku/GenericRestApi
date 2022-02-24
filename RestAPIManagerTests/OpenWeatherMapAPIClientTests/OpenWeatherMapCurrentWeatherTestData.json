@@ -1,0 +1,43 @@
+{
+    "coord": {
+        "lon": 19.9445,
+        "lat": 50.0489
+    },
+    "weather": [
+        {
+            "id": 800,
+            "main": "Clear",
+            "description": "clear sky",
+            "icon": "01d"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 281.03,
+        "feels_like": 280.34,
+        "temp_min": 278.85,
+        "temp_max": 282.59,
+        "pressure": 1021,
+        "humidity": 51
+    },
+    "visibility": 10000,
+    "wind": {
+        "speed": 1.54,
+        "deg": 80
+    },
+    "clouds": {
+        "all": 0
+    },
+    "dt": 1645697662,
+    "sys": {
+        "type": 2,
+        "id": 2009211,
+        "country": "PL",
+        "sunrise": 1645680864,
+        "sunset": 1645719174
+    },
+    "timezone": 3600,
+    "id": 3085041,
+    "name": "Śródmieście",
+    "cod": 200
+}

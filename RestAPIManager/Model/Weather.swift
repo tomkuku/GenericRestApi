@@ -17,7 +17,7 @@ struct Weather {
     var cloudsAll: Int?
 }
 
-extension Weather: Decodable {
+extension Weather: Decodable, Equatable {
     
     private enum CodingKeys: String, CodingKey {
         case main

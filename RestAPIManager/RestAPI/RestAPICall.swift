@@ -7,33 +7,7 @@
 
 import Foundation
 
-enum HTTPError: Error {
-    case information
-    case success
-    case redirecton
-    case server
-    case client
-    case unknown
-
-    init(statusCode: Int) {
-        switch statusCode {
-        case 100...199:
-            self = .information
-        case 200...299:
-            self = .success
-        case 300...399:
-            self = .redirecton
-        case 400...499:
-            self = .client
-        case 500...599:
-            self = .server
-        default:
-            self = .unknown
-        }
-    }
-}
-
-protocol RestAPICallFailureResultError: Error {
+protocol RestAPICallFailureResultError: Error, Equatable {
     static func unhandled(_ httpError: HTTPError) -> Self
 }
 

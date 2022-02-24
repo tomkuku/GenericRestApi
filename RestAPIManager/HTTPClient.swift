@@ -14,6 +14,33 @@ enum HTTPMethod: String {
     case patch = "PATCH"
 }
 
+enum HTTPError: Error {
+    case information
+    case success
+    case redirecton
+    case server
+    case client
+    case unknown
+
+    init(statusCode: Int) {
+        switch statusCode {
+        case 100...199:
+            self = .information
+        case 200...299:
+            self = .success
+        case 300...399:
+            self = .redirecton
+        case 400...499:
+            self = .client
+        case 500...599:
+            self = .server
+        default:
+            self = .unknown
+        }
+    }
+}
+
+
 enum HTTPClientError: Error {
     case `internal`
     case noInternatConnection
@@ -37,8 +64,6 @@ protocol HTTPClient {
 }
 
 final class HTTPClientImpl: HTTPClient {
-    
-    // MARK: Properties
     
     private let session: URLSession
     
