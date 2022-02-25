@@ -10,24 +10,14 @@ import Foundation
 struct AddUserGoRestAPICall: RestAPICall {
     
     typealias SuccessResult = URL
-    typealias FailureResult = FailureError
     typealias Client = GoRestAPIClient
-    
-    enum FailureError: RestAPICallFailureResultError {
-        case nameTaken
-        case emailTaken
-        case noLocation
-        case unhandled(HTTPError)
-    }
     
     var httpRequest: HTTPRequest
     var endpoint: GoRestAPIClient.CallEndpoint = .addUser
     
     init(_ user: User) {
-        httpRequest = .init(method: .post,
-                            url: endpoint.url,
-                            headers: endpoint.headers,
-                            body: JSONCoder.encode(object: user))
+        let bodyData = JSONCoder.encode(object: user)
+        httpRequest = .init(method: .post, url: endpoint.url, headers: endpoint.headers, body: bodyData)
     }
     
     func handleResponse(_ response: HTTPResponse, completion: (ResultType) -> Void) {

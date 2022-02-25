@@ -10,22 +10,13 @@ import Foundation
 struct GetUsersGoRestAPICall: RestAPICall {
     
     typealias SuccessResult = [User]
-    typealias FailureResult = FailureError
     typealias Client = GoRestAPIClient
-    
-    enum FailureError: RestAPICallFailureResultError {
-        case noData
-        case unhandled(HTTPError)
-    }
     
     var httpRequest: HTTPRequest
     var endpoint: GoRestAPIClient.CallEndpoint = .getUsers
     
     init() {
-        httpRequest = HTTPRequest(method: .get,
-                                  url: endpoint.url,
-                                  headers: endpoint.headers,
-                                  body: nil)
+        httpRequest = HTTPRequest(method: .get, url: endpoint.url, headers: endpoint.headers, body: nil)
     }
     
     func handleResponse(_ response: HTTPResponse, completion: (ResultType) -> Void) {

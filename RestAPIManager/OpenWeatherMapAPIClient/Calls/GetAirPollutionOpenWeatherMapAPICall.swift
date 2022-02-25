@@ -10,25 +10,14 @@ import Foundation
 struct GetAirPollutionOpenWeatherMapAPICall: RestAPICall {
     
     typealias SuccessResult = AirPollution
-    typealias FailureResult = FailureError
     typealias Client = OpenWeatherMapRestAPIClient
-    
-    enum FailureError: RestAPICallFailureResultError {
-        case noData
-        case noCoordinates
-        case wrongLocation
-        case unhandled(HTTPError)
-    }
     
     var httpRequest: HTTPRequest
     var endpoint: OpenWeatherMapRestAPIClient.CallEndpoint
     
     init(lat: Double, lon: Double) {
         endpoint = .getCurrentAirPollution(lat: lat, lon: lon)
-        httpRequest = .init(method: .get,
-                            url: endpoint.url,
-                            headers: endpoint.headers,
-                            body: nil)
+        httpRequest = .init(method: .get, url: endpoint.url, headers: endpoint.headers, body: nil)
     }
     
     func handleResponse(_ response: HTTPResponse, completion: (ResultType) -> Void) {

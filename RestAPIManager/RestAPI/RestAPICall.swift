@@ -13,10 +13,9 @@ protocol RestAPICallFailureResultError: Error, Equatable {
 
 protocol RestAPICall {
     associatedtype SuccessResult
-    associatedtype FailureResult: RestAPICallFailureResultError
     associatedtype Client: RestAPIClient
     
-    typealias ResultType = Result<SuccessResult, FailureResult>
+    typealias ResultType = Result<SuccessResult, Client.FailureError>
     
     var httpRequest: HTTPRequest { get }
     var endpoint: Client.Endpoint { get }

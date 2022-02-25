@@ -10,6 +10,14 @@ import Foundation
 final class OpenWeatherMapRestAPIClient: RestAPIClient {
     
     typealias Endpoint = CallEndpoint
+    typealias FailureError = FailureResultError
+    
+    enum FailureResultError: RestAPICallFailureResultError {
+        case noData
+        case invalidCityId
+        case wrongLocation
+        case unhandled(HTTPError)
+    }
     
     enum CallEndpoint: HTTPEndpint {
         case getCurrentWeather(Int)

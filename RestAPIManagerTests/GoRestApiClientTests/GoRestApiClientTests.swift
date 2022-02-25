@@ -26,17 +26,13 @@ class GoRestAPIClientTests: XCTestCase {
         
         let getUseresCall = GetUsersGoRestAPICall()
         var result: GetUsersGoRestAPICall.ResultType!
-        var isMainThread: Bool!
         
         sut.call(getUseresCall) {
             result = $0
-            isMainThread = Thread.current.isMainThread
             expectation.fulfill()
         }
         
         waitForExpectations(timeout: 10, handler: nil)
-        
-        XCTAssertFalse(isMainThread)
         
         switch result {
         case .success(let users):
@@ -58,17 +54,13 @@ class GoRestAPIClientTests: XCTestCase {
         
         let addUserCall = AddUserGoRestAPICall(user)
         var result: AddUserGoRestAPICall.ResultType!
-        var isMainThread: Bool!
         
         sut.call(addUserCall) {
             result = $0
-            isMainThread = Thread.current.isMainThread
             expectation.fulfill()
         }
         
         waitForExpectations(timeout: 10, handler: nil)
-        
-        XCTAssertFalse(isMainThread)
         
         switch result {
         case .success(let url):
@@ -85,17 +77,13 @@ class GoRestAPIClientTests: XCTestCase {
         
         let deleteUserCall = UpdateUserGoRestAPICall(user)
         var result: UpdateUserGoRestAPICall.ResultType!
-        var isMainThread: Bool!
         
         sut.call(deleteUserCall) {
             result = $0
-            isMainThread = Thread.current.isMainThread
             expectation.fulfill()
         }
         
         waitForExpectations(timeout: 10, handler: nil)
-        
-        XCTAssertFalse(isMainThread)
         
         switch result {
         case .success(): break
@@ -103,7 +91,7 @@ class GoRestAPIClientTests: XCTestCase {
             XCTFail()
         }
     }
-
+    
     func tests_deleteUser() {
         let expectation = expectation(description: "delete.user")
         
@@ -111,17 +99,13 @@ class GoRestAPIClientTests: XCTestCase {
         
         let deleteUserCall = DeleteUserGoRestAPICall(user)
         var result: DeleteUserGoRestAPICall.ResultType!
-        var isMainThread: Bool!
         
         sut.call(deleteUserCall) {
             result = $0
-            isMainThread = Thread.current.isMainThread
             expectation.fulfill()
         }
         
         waitForExpectations(timeout: 10, handler: nil)
-        
-        XCTAssertFalse(isMainThread)
         
         switch result {
         case .success(): break

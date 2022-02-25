@@ -10,6 +10,16 @@ import Foundation
 final class GoRestAPIClient: RestAPIClient {
     
     typealias Endpoint = CallEndpoint
+    typealias FailureError = FailureResultError
+    
+    enum FailureResultError: RestAPICallFailureResultError {
+        case nameTaken
+        case emailTaken
+        case noLocation
+        case invalidUserId
+        case noData
+        case unhandled(HTTPError)
+    }
     
     enum CallEndpoint: HTTPEndpint {
         case getUsers
