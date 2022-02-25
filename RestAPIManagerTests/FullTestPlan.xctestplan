@@ -1,0 +1,64 @@
+{
+  "configurations" : [
+    {
+      "id" : "1C9FA0E9-4936-4376-904A-F99C679CBF51",
+      "name" : "MemoryManagment",
+      "options" : {
+        "addressSanitizer" : {
+          "enabled" : false
+        },
+        "guardMallocEnabled" : true,
+        "mainThreadCheckerEnabled" : true,
+        "mallocGuardEdgesEnabled" : true,
+        "mallocScribbleEnabled" : true,
+        "mallocStackLoggingOptions" : {
+          "loggingType" : "allAllocations"
+        },
+        "nsZombieEnabled" : true,
+        "threadSanitizerEnabled" : false,
+        "undefinedBehaviorSanitizerEnabled" : false
+      }
+    },
+    {
+      "id" : "5623F635-9BC4-4838-8B49-64C4F1D245A2",
+      "name" : "ASan",
+      "options" : {
+        "addressSanitizer" : {
+          "enabled" : true
+        },
+        "mallocGuardEdgesEnabled" : false,
+        "mallocStackLoggingOptions" : null,
+        "nsZombieEnabled" : false,
+        "undefinedBehaviorSanitizerEnabled" : true
+      }
+    },
+    {
+      "id" : "CC30AE1C-5014-41E6-9A26-90CB467792E4",
+      "name" : "TSan",
+      "options" : {
+        "addressSanitizer" : {
+          "enabled" : false
+        },
+        "mallocStackLoggingOptions" : null,
+        "threadSanitizerEnabled" : true
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "addressSanitizer" : {
+      "enabled" : true
+    },
+    "testExecutionOrdering" : "random",
+    "undefinedBehaviorSanitizerEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:RestAPIManager.xcodeproj",
+        "identifier" : "7201858827906F140021B813",
+        "name" : "RestAPIManagerTests"
+      }
+    }
+  ],
+  "version" : 1
+}

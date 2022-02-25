@@ -1,5 +1,5 @@
 //
-//  HTTPClientMock.swift
+//  GoRestApiHTTPClientMock.swift
 //  RestAPIManagerTests
 //
 //  Created by Tomasz Kukułka on 19/01/2022.
